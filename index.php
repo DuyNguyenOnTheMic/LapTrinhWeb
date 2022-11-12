@@ -1,6 +1,21 @@
 <?php require_once 'includes/compress.php';
 require_once 'includes/header.php'; ?>
 
+<?php 
+// Include the database connection file 
+require_once 'config/dbConnect.php'; 
+ 
+// Initialize shopping cart class 
+include_once 'Cart.class.php'; 
+$cart = new Cart; 
+ 
+// Fetch products from the database 
+$sqlQ = "SELECT * FROM products"; 
+$stmt = $db->prepare($sqlQ); 
+$stmt->execute(); 
+$result = $stmt->get_result(); 
+?>
+
 <!-- SLIDER AREA START (slider-6) -->
 <div class="ltn__slider-area ltn__slider-3 ltn__slider-6 section-bg-1">
     <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1 arrow-white---">
