@@ -54,20 +54,19 @@ $cart = new Cart;
                                     foreach ($cartItems as $item) {
                                         $proImg = !empty($item["image"]) ? 'img/product/' . $item["image"] : 'images/demo-img.png';
                                 ?>
-                                        <tr>
-                                            <td class="cart-product-remove" onclick="return confirm('Are you sure to remove cart item?')?window.location.href='cartAction.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>':false;" title="Remove Item">x</td>
-                                            <td class="cart-product-image">
+                                        <tr width="450px">
+                                            <td width="50px" class="cart-product-remove" onclick="return confirm('Are you sure to remove cart item?')?window.location.href='cartAction.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>':false;" title="Remove Item">x</td>
+                                            <td width="100px" class="cart-product-image">
                                                 <a href="product-details.html"><img src="<?php echo $proImg; ?>" alt="#"></a>
                                             </td>
-                                            <td class="cart-product-info">
+                                            <td width="100px" class="cart-product-info">
                                                 <h4><a href="product-details.html"><?php echo $item["name"]; ?></a></h4>
                                             </td>
-                                            <td class="cart-product-price"><?php echo CURRENCY_SYMBOL . $item["price"] . ' ' . CURRENCY; ?></td>
-                                            <td class="cart-product-quantity">
+                                            <td width="100px" class="cart-product-price"><?php echo CURRENCY_SYMBOL . $item["price"] . ' ' . CURRENCY; ?></td>
+                                            <td width="100px" class="cart-product-quantity">
                                                 <input class="form-control" style="width: 80px;" type="number" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" />
                                             </td>
-                                            </td>
-                                            <td class="cart-product-subtotal"><?php echo CURRENCY_SYMBOL . $item["subtotal"] . ' ' . CURRENCY; ?></td>
+                                            <td width="100px" class="cart-product-subtotal"><?php echo CURRENCY_SYMBOL . $item["subtotal"] . ' ' . CURRENCY; ?></td>
                                         </tr>
                                     <?php }
                                 } else { ?>
