@@ -35,7 +35,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         $insertItem = $cart->insert($itemData); 
          
         // Redirect to cart page 
-        $redirectURL = $insertItem?'viewCart.php':'index.php'; 
+        $redirectURL = $insertItem?'cart.php':'index.php'; 
     }elseif($_REQUEST['action'] == 'updateCartItem' && !empty($_REQUEST['id'])){ 
         // Update item data in cart 
         $itemData = array( 
@@ -51,7 +51,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         $deleteItem = $cart->remove($_REQUEST['id']); 
          
         // Redirect to cart page 
-        $redirectURL = 'viewCart.php'; 
+        $redirectURL = 'cart.php'; 
     }elseif($_REQUEST['action'] == 'placeOrder' && $cart->total_items() > 0){ 
         $redirectURL = 'checkout.php'; 
          
