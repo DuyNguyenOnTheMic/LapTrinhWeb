@@ -175,42 +175,23 @@ $result = $stmt->get_result();
             <!-- ltn__product-item -->
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                 <div class="ltn__product-item text-center">
-                    <div class="product-img">
-                        <a href="product-details.html"><img src="img/product/1.png" alt="#"></a>
-                        <div class="product-badge">
-                            <ul>
-                                <li class="badge-2">10%</li>
-                            </ul>
-                        </div>
-                        <div class="product-hover-action product-hover-action-2">
-                            <ul>
-                                <li>
-                                    <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                        <i class="icon-magnifier"></i>
-                                    </a>
-                                </li>
-                                <li class="add-to-cart">
-                                    <a href="#" title="Add to Cart" data-bs-toggle="modal" data-bs-target="#add_to_cart_modal">
-                                        <span class="cart-text d-none d-xl-block">Add to Cart</span>
-                                        <span class="d-block d-xl-none"><i class="icon-handbag"></i></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-                                        <i class="icon-shuffle"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h2 class="product-title"><a href="product-details.html">Pink Flower Tree</a></h2>
-                        <div class="product-price">
-                            <span>$18.00</span>
-                            <del>$21.00</del>
-                        </div>
-                    </div>
-                </div>
+                <?php 
+    if($result->num_rows > 0){ 
+        while($row = $result->fetch_assoc()){ 
+            $proImg = !empty($row["image"])?'img/product/'.$row["image"]:'images/demo-img.png'; 
+    ?>
+        <div class="card" style="width: 18rem;">
+            <img src="<?php echo $proImg; ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $row["name"]; ?></h5>
+                <h6 class="card-subtitle mb-2 text-muted">Price: <?php echo CURRENCY_SYMBOL.$row["price"].' '.CURRENCY; ?></h6>
+                <p class="card-text"><?php echo $row["description"]; ?></p>
+                <a href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    <?php } }else{ ?>
+        <p>Product(s) not found.....</p>
+    <?php } ?>                </div>
             </div>
             <!-- ltn__product-item -->
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
