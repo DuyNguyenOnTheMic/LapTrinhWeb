@@ -230,7 +230,7 @@ $cart = new Cart;
                                                 <li><a href="product-details.html">Shop details </a></li>
                                                 <li><a href="#">Other Pages <span class="float-right">>></span></a>
                                                     <ul>
-                                                        <li><a href="cart.html">Cart</a></li>
+                                                        <li><a href="cart.php">Cart</a></li>
                                                         <li><a href="wishlist.html">Wishlist</a></li>
                                                         <li><a href="checkout.html">Checkout</a></li>
                                                         <li><a href="order-tracking.html">Order Tracking</a></li>
@@ -323,8 +323,8 @@ $cart = new Cart;
                     <h5>Subtotal: <span>$310.00</span></h5>
                 </div>
                 <div class="btn-wrapper">
-                    <a href="cart.html" class="theme-btn-1 btn btn-effect-1">View Cart</a>
-                    <a href="cart.html" class="theme-btn-2 btn btn-effect-2">Checkout</a>
+                    <a href="cart.php" class="theme-btn-1 btn btn-effect-1">View Cart</a>
+                    <a href="cart.php" class="theme-btn-2 btn btn-effect-2">Checkout</a>
                 </div>
                 <p>Free Shipping on All Orders Over $100!</p>
             </div>
@@ -365,7 +365,7 @@ $cart = new Cart;
                             <li><a href="shop-left-sidebar.html">Shop Left sidebar</a></li>
                             <li><a href="shop-right-sidebar.html">Shop right sidebar</a></li>
                             <li><a href="product-details.html">Shop details </a></li>
-                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="cart.php">Cart</a></li>
                             <li><a href="wishlist.html">Wishlist</a></li>
                             <li><a href="checkout.html">Checkout</a></li>
                             <li><a href="order-tracking.html">Order Tracking</a></li>
@@ -419,7 +419,7 @@ $cart = new Cart;
                         </a>
                     </li>
                     <li>
-                        <a href="cart.html" title="Shoping Cart">
+                        <a href="cart.php" title="Shoping Cart">
                             <span class="utilize-btn-icon">
                                 <i class="icon-handbag"></i>
                                 <sup>5</sup>
