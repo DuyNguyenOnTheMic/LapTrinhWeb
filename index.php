@@ -1,15 +1,15 @@
 <?php require_once 'includes/compress.php';
 require_once 'includes/header.php'; ?>
 
-<?php 
+<?php
 // Include the database connection file 
-require_once 'config/dbConnect.php'; 
+require_once 'config/dbConnect.php';
 
 // Fetch products from the database 
-$sqlQ = "SELECT * FROM products"; 
-$stmt = $db->prepare($sqlQ); 
-$stmt->execute(); 
-$result = $stmt->get_result(); 
+$sqlQ = "SELECT * FROM products";
+$stmt = $db->prepare($sqlQ);
+$stmt->execute();
+$result = $stmt->get_result();
 ?>
 
 <!-- SLIDER AREA START (slider-6) -->
@@ -175,23 +175,25 @@ $result = $stmt->get_result();
             <!-- ltn__product-item -->
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                 <div class="ltn__product-item text-center">
-                <?php 
-    if($result->num_rows > 0){ 
-        while($row = $result->fetch_assoc()){ 
-            $proImg = !empty($row["image"])?'img/product/'.$row["image"]:'images/demo-img.png'; 
-    ?>
-        <div class="card" style="width: 18rem;">
-            <img src="<?php echo $proImg; ?>" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title"><?php echo $row["name"]; ?></h5>
-                <h6 class="card-subtitle mb-2 text-muted">Price: <?php echo CURRENCY_SYMBOL.$row["price"].' '.CURRENCY; ?></h6>
-                <p class="card-text"><?php echo $row["description"]; ?></p>
-                <a href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>" class="btn btn-primary">Add to Cart</a>
-            </div>
-        </div>
-    <?php } }else{ ?>
-        <p>Product(s) not found.....</p>
-    <?php } ?>                </div>
+                    <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $proImg = !empty($row["image"]) ? 'img/product/' . $row["image"] : 'images/demo-img.png';
+                    ?>
+                            <div class="card" style="width: 18rem;">
+                                <img src="<?php echo $proImg; ?>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $row["name"]; ?></h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Price: <?php echo CURRENCY_SYMBOL . $row["price"] . ' ' . CURRENCY; ?></h6>
+                                    <p class="card-text"><?php echo $row["description"]; ?></p>
+                                    <a href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>" class="btn btn-primary">Add to Cart</a>
+                                </div>
+                            </div>
+                        <?php }
+                    } else { ?>
+                        <p>Product(s) not found.....</p>
+                    <?php } ?>
+                </div>
             </div>
             <!-- ltn__product-item -->
             <div class="col-lg-3 col-md-4 col-sm-6 col-6">
