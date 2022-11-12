@@ -64,9 +64,8 @@ $cart = new Cart;
                                             </td>
                                             <td class="cart-product-price"><?php echo CURRENCY_SYMBOL . $item["price"] . ' ' . CURRENCY; ?></td>
                                             <td class="cart-product-quantity">
-                                                <div class="cart-plus-minus">
-                                                    <input type="text" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" name="qtybutton" class="cart-plus-minus-box">
-                                                </div>
+                                                <input class="form-control" style="width: 80px;" type="number" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" />
+                                            </td>
                                             </td>
                                             <td class="cart-product-subtotal"><?php echo CURRENCY_SYMBOL . $item["subtotal"] . ' ' . CURRENCY; ?></td>
                                         </tr>
