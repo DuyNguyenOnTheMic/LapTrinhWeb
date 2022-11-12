@@ -4,11 +4,7 @@ require_once 'includes/header.php'; ?>
 <?php 
 // Include the database connection file 
 require_once 'config/dbConnect.php'; 
- 
-// Initialize shopping cart class 
-include_once 'Cart.class.php'; 
-$cart = new Cart; 
- 
+
 // Fetch products from the database 
 $sqlQ = "SELECT * FROM products"; 
 $stmt = $db->prepare($sqlQ); 

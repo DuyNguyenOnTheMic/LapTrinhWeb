@@ -5,12 +5,6 @@ require_once 'config/dbConnect.php';
 // Initialize shopping cart class 
 include_once 'Cart.class.php'; 
 $cart = new Cart; 
- 
-// Fetch products from the database 
-$sqlQ = "SELECT * FROM products"; 
-$stmt = $db->prepare($sqlQ); 
-$stmt->execute(); 
-$result = $stmt->get_result(); 
 ?>
 
 <!doctype html>
