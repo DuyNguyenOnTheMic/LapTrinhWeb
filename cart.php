@@ -63,8 +63,8 @@ $cart = new Cart;
                                                 <h4><a href="product-details.html"><?php echo $item["name"]; ?></a></h4>
                                             </td>
                                             <td width="100px" class="cart-product-price"><?php echo CURRENCY_SYMBOL . $item["price"] . ' ' . CURRENCY; ?></td>
-                                            <td width="100px" class="cart-product-quantity">
-                                                <input class="form-control" style="width: 80px;" type="number" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" />
+                                            <td width="200px" class="cart-product-quantity">
+                                                <input class="form-control text-center" name="quantity" type="text" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" />
                                             </td>
                                             <td width="100px" class="cart-product-subtotal"><?php echo CURRENCY_SYMBOL . $item["subtotal"] . ' ' . CURRENCY; ?></td>
                                         </tr>
@@ -380,7 +380,13 @@ $cart = new Cart;
 <script src="js/plugins.js"></script>
 <!-- Main JS -->
 <script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/4.3.0/jquery.bootstrap-touchspin.min.js"></script>
 <script>
+    $("input[name='quantity']").TouchSpin({
+        min: 0,
+        max: 100
+    });
+
     function updateCartItem(obj, id) {
         $.get("cartAction.php", {
             action: "updateCartItem",
