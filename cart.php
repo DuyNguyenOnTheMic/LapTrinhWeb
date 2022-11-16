@@ -384,7 +384,9 @@ $cart = new Cart;
 <script>
     $("input[name='quantity']").TouchSpin({
         min: 0,
-        max: 100
+        max: 100,
+        buttondown_class: "btn theme-btn-1 border-0",
+        buttonup_class: "btn theme-btn-1 border-0"
     });
 
     function updateCartItem(obj, id) {
