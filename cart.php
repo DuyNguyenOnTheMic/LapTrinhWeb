@@ -63,8 +63,8 @@ $cart = new Cart;
                                                 <h4><a href="product-details.html"><?php echo $item["name"]; ?></a></h4>
                                             </td>
                                             <td width="100px" class="cart-product-price"><?php echo CURRENCY_SYMBOL . $item["price"] . ' ' . CURRENCY; ?></td>
-                                            <td width="200px" class="cart-product-quantity">
-                                                <input class="form-control text-center mb-0" name="quantity" type="text" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" />
+                                            <td width="150px" class="cart-product-quantity">
+                                                <input class="form-control text-center mb-0 p-0" name="quantity" type="text" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" />
                                             </td>
                                             <td width="100px" class="cart-product-subtotal"><?php echo CURRENCY_SYMBOL . $item["subtotal"] . ' ' . CURRENCY; ?></td>
                                         </tr>
@@ -85,54 +85,6 @@ $cart = new Cart;
                                         <td></td>
                                     </tr>
                                 <?php } ?>
-                                <tr>
-                                    <td class="cart-product-remove">x</td>
-                                    <td class="cart-product-image">
-                                        <a href="product-details.html"><img src="img/product/1.png" alt="#"></a>
-                                    </td>
-                                    <td class="cart-product-info">
-                                        <h4><a href="product-details.html">Brake Conversion Kit</a></h4>
-                                    </td>
-                                    <td class="cart-product-price">$149.00</td>
-                                    <td class="cart-product-quantity">
-                                        <div class="cart-plus-minus">
-                                            <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                        </div>
-                                    </td>
-                                    <td class="cart-product-subtotal">$298.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="cart-product-remove">x</td>
-                                    <td class="cart-product-image">
-                                        <a href="product-details.html"><img src="img/product/2.png" alt="#"></a>
-                                    </td>
-                                    <td class="cart-product-info">
-                                        <h4><a href="product-details.html">OE Replica Wheels</a></h4>
-                                    </td>
-                                    <td class="cart-product-price">$85.00</td>
-                                    <td class="cart-product-quantity">
-                                        <div class="cart-plus-minus">
-                                            <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                        </div>
-                                    </td>
-                                    <td class="cart-product-subtotal">$170.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="cart-product-remove">x</td>
-                                    <td class="cart-product-image">
-                                        <a href="product-details.html"><img src="img/product/3.png" alt="#"></a>
-                                    </td>
-                                    <td class="cart-product-info">
-                                        <h4><a href="product-details.html">Wheel Bearing Retainer</a></h4>
-                                    </td>
-                                    <td class="cart-product-price">$75.00</td>
-                                    <td class="cart-product-quantity">
-                                        <div class="cart-plus-minus">
-                                            <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                        </div>
-                                    </td>
-                                    <td class="cart-product-subtotal">$150.00</td>
-                                </tr>
                                 <tr class="cart-coupon-row">
                                     <td colspan="6">
                                         <div class="cart-coupon">
@@ -153,11 +105,7 @@ $cart = new Cart;
                             <tbody>
                                 <tr>
                                     <td>Cart Subtotal</td>
-                                    <td>$618.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Shipping and Handing</td>
-                                    <td>$15.00</td>
+                                    <td><?php echo CURRENCY_SYMBOL . $cart->total() . ' ' . CURRENCY; ?></strong></td>
                                 </tr>
                                 <tr>
                                     <td>Vat</td>
@@ -165,7 +113,7 @@ $cart = new Cart;
                                 </tr>
                                 <tr>
                                     <td><strong>Order Total</strong></td>
-                                    <td><strong>$633.00</strong></td>
+                                    <td><strong><?php echo CURRENCY_SYMBOL . $cart->total() . ' ' . CURRENCY; ?></strong></strong></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -385,8 +333,8 @@ $cart = new Cart;
     $("input[name='quantity']").TouchSpin({
         min: 0,
         max: 100,
-        buttondown_class: "btn theme-btn-1 border-0",
-        buttonup_class: "btn theme-btn-1 border-0"
+        buttondown_class: "btn theme-btn-1 border-0 px-4",
+        buttonup_class: "btn theme-btn-1 border-0 px-4"
     });
 
     function updateCartItem(obj, id) {
