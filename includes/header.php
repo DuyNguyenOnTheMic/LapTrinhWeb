@@ -291,7 +291,7 @@ $cart = new Cart;
                                 </div>
                                 <div class="mini-cart-info">
                                     <h6><a href="#"><?php echo $item["name"]; ?></a></h6>
-                                    <span class="mini-cart-quantity">1 x $65.00</span>
+                                    <span class="mini-cart-quantity"><?php echo $item["qty"]; ?> x <?php echo CURRENCY_SYMBOL . $item["subtotal"] . ' ' . CURRENCY; ?></span>
                                 </div>
                             </div>
                         <?php }
