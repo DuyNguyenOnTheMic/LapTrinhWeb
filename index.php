@@ -186,7 +186,7 @@ $result = $stmt->get_result();
                                     <h5 class="card-title"><?php echo $row["name"]; ?></h5>
                                     <h6 class="card-subtitle mb-2 text-muted">Price: <?php echo CURRENCY_SYMBOL . $row["price"] . ' ' . CURRENCY; ?></h6>
                                     <p class="card-text"><?php echo $row["description"]; ?></p>
-                                    <a href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>" class="btn btn-primary">Add to Cart</a>
+                                    <a href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>" class="btn btn-primary" id="btnAddToCart">Add to Cart</a>
                                 </div>
                             </div>
                         </div>
