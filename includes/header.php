@@ -24,6 +24,7 @@ $cart = new Cart;
     <link rel="stylesheet" href="css/font-icons.css">
     <!-- plugins css -->
     <link rel="stylesheet" href="css/plugins.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Responsive css -->
