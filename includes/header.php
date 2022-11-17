@@ -288,7 +288,7 @@ $cart = new Cart;
                             <div class="mini-cart-item clearfix">
                                 <div class="mini-cart-img">
                                     <a href="#"><img src="<?php echo $proImg; ?>" alt="Image"></a>
-                                    <span class="mini-cart-item-delete"><i class="icon-trash"></i></span>
+                                    <span class="mini-cart-item-delete"><i class="icon-trash" onclick="return confirm('Are you sure to remove cart item?')?window.location.href='cartAction.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>':false;"></i></span>
                                 </div>
                                 <div class="mini-cart-info">
                                     <h6><a href="#"><?php echo $item["name"]; ?></a></h6>
