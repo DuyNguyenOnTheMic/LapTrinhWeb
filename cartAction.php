@@ -34,8 +34,6 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         // Insert item to cart 
         $insertItem = $cart->insert($itemData); 
          
-        // Redirect to cart page 
-        $redirectURL = $insertItem?'cart.php':'index.php'; 
     }elseif($_REQUEST['action'] == 'updateCartItem' && !empty($_REQUEST['id'])){ 
         // Update item data in cart 
         $itemData = array( 

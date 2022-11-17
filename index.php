@@ -1166,7 +1166,11 @@ $result = $stmt->get_result();
 <script>
     $('.btnAddToCart').on('click', function(e) {
         e.preventDefault();
-        alert('hehe');
+        $.ajax({
+            url: $(this).attr('href'),
+        }).done(function(data) {
+            location.reload();
+        });
     });
 </script>
 
