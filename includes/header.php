@@ -301,7 +301,7 @@ $cart = new Cart;
                 </div>
                 <div class="mini-cart-footer">
                     <div class="mini-cart-sub-total">
-                        <h5>Subtotal: <span>$310.00</span></h5>
+                        <h5>Subtotal: <span><?php echo CURRENCY_SYMBOL . $cart->total() . ' ' . CURRENCY; ?></span></h5>
                     </div>
                     <div class="btn-wrapper">
                         <a href="cart.php" class="theme-btn-1 btn btn-effect-1">View Cart</a>
