@@ -174,4 +174,15 @@
             location.reload();
         });
     });
+
+    $('.mini-cart-item-delete').on('click', function(e) {
+        var result = confirm('Are you sure to remove cart item?');
+        if (result == true) {
+            // Delete cart item
+            var id = $(this).data('id');
+            window.location.href='cartAction.php?action=removeCartItem&id=' + id;
+        } else {
+            return false;
+        }
+    });
 </script>
