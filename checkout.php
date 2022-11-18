@@ -51,6 +51,15 @@ if (!empty($sessData['status']['msg'])) {
 <div class="ltn__checkout-area mb-100">
     <div class="container">
         <div class="row">
+            <?php if (!empty($statusMsg) && ($statusMsgType == 'success')) { ?>
+                <div class="col-md-12">
+                    <div class="alert alert-success"><?php echo $statusMsg; ?></div>
+                </div>
+            <?php } elseif (!empty($statusMsg) && ($statusMsgType == 'error')) { ?>
+                <div class="col-md-12">
+                    <div class="alert alert-danger"><?php echo $statusMsg; ?></div>
+                </div>
+            <?php } ?>
             <div class="col-lg-12">
                 <div class="ltn__checkout-inner">
                     <div class="ltn__checkout-single-content ltn__returning-customer-wrap">
@@ -127,7 +136,7 @@ if (!empty($sessData['status']['msg'])) {
                                         </div>
                                     </div>
                                 </div>
-                                <input type="hidden" name="action" value="placeOrder"/>
+                                <input type="hidden" name="action" value="placeOrder" />
                                 <p><label class="input-info-save mb-0"><input type="checkbox" name="agree"> Create an account?</label></p>
                                 <h6>Order Notes (optional)</h6>
                                 <div class="input-item input-item-textarea ltn__custom-icon">
