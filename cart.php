@@ -1,6 +1,7 @@
-<?php require_once 'includes/header.php'; ?>
-
 <?php
+// include header
+require_once 'includes/header.php';
+
 // Include the configuration file 
 require_once 'config/config.php';
 
