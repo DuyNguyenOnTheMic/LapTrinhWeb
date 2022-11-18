@@ -127,6 +127,7 @@ if (!empty($sessData['status']['msg'])) {
                                         </div>
                                     </div>
                                 </div>
+                                <input type="hidden" name="action" value="placeOrder"/>
                                 <p><label class="input-info-save mb-0"><input type="checkbox" name="agree"> Create an account?</label></p>
                                 <h6>Order Notes (optional)</h6>
                                 <div class="input-item input-item-textarea ltn__custom-icon">
