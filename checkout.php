@@ -93,12 +93,12 @@ if (!empty($sessData['status']['msg'])) {
                     <div class="ltn__checkout-single-content mt-50">
                         <h4 class="title-2">Billing Details</h4>
                         <div class="ltn__checkout-single-content-info">
-                            <form method="POST" action="cartAction.php">
+                            <form method="POST" action="cartAction.php" id="orderForm">
                                 <h6>Personal Information</h6>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input-item input-item-name ltn__custom-icon">
-                                            <input type="text" name="first_name" value="<?php echo !empty($postData['first_name']) ? $postData['first_name'] : ''; ?>" placeholder="First name">
+                                            <input type="text" name="first_name" value="<?php echo !empty($postData['first_name']) ? $postData['first_name'] : ''; ?>" placeholder="First name" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -178,7 +178,8 @@ if (!empty($sessData['status']['msg'])) {
                     <div class="ltn__payment-note mt-30 mb-30">
                         <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
                     </div>
-                    <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">Place order</button>
+                    <p><?php $sessData ?></p>
+                    <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit" onclick="$('#orderForm')[0].checkValidity()?$('#orderForm').submit():alert('bạn chưa điền hết các trường thông tin!');">Place order</button>
                 </div>
             </div>
             <div class="col-lg-6">
