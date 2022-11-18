@@ -55,7 +55,7 @@ $cart = new Cart;
                                         $proImg = !empty($item["image"]) ? 'img/product/' . $item["image"] : 'images/demo-img.png';
                                 ?>
                                         <tr width="450px">
-                                            <td width="50px" class="cart-product-remove" onclick="return confirm('Are you sure to remove cart item?')?window.location.href='cartAction.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>':false;" title="Remove Item">x</td>
+                                            <td width="50px" class="cart-product-remove" data-id="<?php echo $item["rowid"]?>" title="Remove Item">x</td>
                                             <td width="100px" class="cart-product-image">
                                                 <a href="product-details.html"><img src="<?php echo $proImg; ?>" alt="#"></a>
                                             </td>

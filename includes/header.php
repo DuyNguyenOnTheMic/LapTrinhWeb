@@ -289,7 +289,7 @@ $cart = new Cart;
                             <div class="mini-cart-item clearfix">
                                 <div class="mini-cart-img">
                                     <a href="#"><img src="<?php echo $proImg; ?>" alt="Image"></a>
-                                    <span class="mini-cart-item-delete" data-id="<?php echo $item["rowid"]?>"><i class="icon-trash"></i></span>
+                                    <span class="mini-cart-item-delete cart-product-remove" data-id="<?php echo $item["rowid"]?>"><i class="icon-trash"></i></span>
                                 </div>
                                 <div class="mini-cart-info">
                                     <h6><a href="#"><?php echo $item["name"]; ?></a></h6>

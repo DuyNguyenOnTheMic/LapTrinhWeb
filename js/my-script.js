@@ -9,7 +9,7 @@ $('.btnAddToCart').on('click', function (e) {
     });
 });
 
-$('.mini-cart-item-delete').on('click', function (e) {
+$('.cart-product-remove').on('click', function (e) {
     var result = confirm('Are you sure to remove cart item?');
     if (result == true) {
         // Delete cart item
