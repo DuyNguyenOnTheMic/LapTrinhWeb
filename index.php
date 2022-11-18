@@ -619,7 +619,3 @@ $result = $stmt->get_result();
 <!-- Body main wrapper end -->
 
 <?php require_once 'includes/footer.php'; ?>
-
-</body>
-
-</html>

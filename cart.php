@@ -130,31 +130,3 @@ $cart = new Cart;
 <!-- Body main wrapper end -->
 
 <?php require_once 'includes/footer.php'; ?>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-touchspin/4.3.0/jquery.bootstrap-touchspin.min.js"></script>
-<script>
-    $("input[name='quantity']").TouchSpin({
-        min: 0,
-        max: 100,
-        buttondown_class: "btn theme-btn-1 border-0 px-4",
-        buttonup_class: "btn theme-btn-1 border-0 px-4"
-    });
-
-    function updateCartItem(obj, id) {
-        $.get("cartAction.php", {
-            action: "updateCartItem",
-            id: id,
-            qty: obj.value
-        }, function(data) {
-            if (data == 'ok') {
-                location.reload();
-            } else {
-                alert('Cart update failed, please try again.');
-            }
-        });
-    }
-</script>
-
-</body>
-
-</html>
