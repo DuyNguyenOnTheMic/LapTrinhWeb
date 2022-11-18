@@ -118,7 +118,7 @@ $cart = new Cart;
                             </tbody>
                         </table>
                         <div class="btn-wrapper text-right">
-                            <a href="checkout.html" class="theme-btn-1 btn btn-effect-1">Proceed to checkout</a>
+                            <a href="checkout.php" class="theme-btn-1 btn btn-effect-1">Proceed to checkout</a>
                         </div>
                     </div>
                 </div>
