@@ -93,27 +93,27 @@ if (!empty($sessData['status']['msg'])) {
                     <div class="ltn__checkout-single-content mt-50">
                         <h4 class="title-2">Billing Details</h4>
                         <div class="ltn__checkout-single-content-info">
-                            <form action="#">
+                            <form method="POST">
                                 <h6>Personal Information</h6>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input-item input-item-name ltn__custom-icon">
-                                            <input type="text" name="ltn__name" placeholder="First name">
+                                            <input type="text" name="first_name" value="<?php echo !empty($postData['first_name']) ? $postData['first_name'] : ''; ?>" placeholder="First name">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-item input-item-name ltn__custom-icon">
-                                            <input type="text" name="ltn__lastname" placeholder="Last name">
+                                            <input type="text" name="last_name" value="<?php echo !empty($postData['last_name']) ? $postData['last_name'] : ''; ?>" placeholder="Last name">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-item input-item-email ltn__custom-icon">
-                                            <input type="email" name="ltn__email" placeholder="email address">
+                                            <input type="email" name="email" value="<?php echo !empty($postData['email']) ? $postData['email'] : ''; ?>" placeholder="email address">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-item input-item-phone ltn__custom-icon">
-                                            <input type="text" name="ltn__phone" placeholder="phone number">
+                                            <input type="text" name="phone" value="<?php echo !empty($postData['phone']) ? $postData['phone'] : ''; ?>" placeholder="phone number">
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@ if (!empty($sessData['status']['msg'])) {
                                         <h6>Address</h6>
                                         <div class="row">
                                             <div class="input-item">
-                                                <input type="text" placeholder="House number and street name">
+                                                <input type="text" name="address" value="<?php echo !empty($postData['address']) ? $postData['address'] : ''; ?>" placeholder="House number and street name">
                                             </div>
                                         </div>
                                     </div>
@@ -186,29 +186,21 @@ if (!empty($sessData['status']['msg'])) {
                     <h4 class="title-2">Cart Totals</h4>
                     <table class="table">
                         <tbody>
+                            <?php
+                            if ($cart->total_items() > 0) {
+                                // Get cart items from session 
+                                $cartItems = $cart->contents();
+                                foreach ($cartItems as $item) {
+                            ?>
+                                    <tr>
+                                        <td><?php echo $item["name"]; ?> <strong>× <?php echo $item["qty"]; ?></strong></td>
+                                        <td><?php echo CURRENCY_SYMBOL . $item["price"]; ?></td>
+                                    </tr>
+                            <?php }
+                            } ?>
                             <tr>
-                                <td>Brake Conversion Kit <strong>× 2</strong></td>
-                                <td>$298.00</td>
-                            </tr>
-                            <tr>
-                                <td>OE Replica Wheels <strong>× 2</strong></td>
-                                <td>$170.00</td>
-                            </tr>
-                            <tr>
-                                <td>Wheel Bearing Retainer <strong>× 2</strong></td>
-                                <td>$150.00</td>
-                            </tr>
-                            <tr>
-                                <td>Shipping and Handing</td>
-                                <td>$15.00</td>
-                            </tr>
-                            <tr>
-                                <td>Vat</td>
-                                <td>$00.00</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Order Total</strong></td>
-                                <td><strong>$633.00</strong></td>
+                                <td><strong>Order Total (VND)</strong></td>
+                                <td><strong><?php echo CURRENCY_SYMBOL . $item["subtotal"]; ?></strong></td>
                             </tr>
                         </tbody>
                     </table>
