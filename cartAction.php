@@ -48,8 +48,6 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         // Remove item from cart 
         $deleteItem = $cart->remove($_REQUEST['id']); 
          
-        // Redirect to cart page 
-        $redirectURL = 'cart.php'; 
     }elseif($_REQUEST['action'] == 'placeOrder' && $cart->total_items() > 0){ 
         $redirectURL = 'checkout.php'; 
          
