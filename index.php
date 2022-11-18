@@ -863,3 +863,7 @@ $result = $stmt->get_result();
 <!-- preloader area end -->
 
 <?php require_once 'includes/footer.php'; ?>
+
+</body>
+
+</html>
