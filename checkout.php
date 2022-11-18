@@ -28,78 +28,78 @@ if(!empty($sessData['status']['msg'])){
 ?>
 
 <div class="container">
-    <h1>ORDER STATUS</h1>
+    <h1>CHECKOUT</h1>
     <div class="col-12">
-        <?php if(!empty($orderInfo)){ ?>
-            <div class="col-md-12">
-                <div class="alert alert-success">Your order has been placed successfully.</div>
-            </div>
-			
-            <!-- Order status & shipping info -->
-            <div class="row col-lg-12 ord-addr-info">
-                <div class="hdr">Order Info</div>
-                <p><b>Reference ID:</b> #<?php echo $orderInfo['id']; ?></p>
-                <p><b>Total:</b> <?php echo CURRENCY_SYMBOL.$orderInfo['grand_total'].' '.CURRENCY; ?></p>
-                <p><b>Placed On:</b> <?php echo $orderInfo['created']; ?></p>
-                <p><b>Buyer Name:</b> <?php echo $orderInfo['first_name'].' '.$orderInfo['last_name']; ?></p>
-                <p><b>Email:</b> <?php echo $orderInfo['email']; ?></p>
-                <p><b>Phone:</b> <?php echo $orderInfo['phone']; ?></p>
-                <p><b>Address:</b> <?php echo $orderInfo['address']; ?></p>
-            </div>
-			
-            <!-- Order items -->
-            <div class="row col-lg-12">
-                <table class="table table-hover cart">
-                    <thead>
-                        <tr>
-                            <th width="10%"></th>
-                            <th width="45%">Product</th>
-                            <th width="15%">Price</th>
-                            <th width="10%">QTY</th>
-                            <th width="20%">Sub Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+        <div class="checkout">
+            <div class="row">
+                <?php if(!empty($statusMsg) && ($statusMsgType == 'success')){ ?>
+                <div class="col-md-12">
+                    <div class="alert alert-success"><?php echo $statusMsg; ?></div>
+                </div>
+                <?php }elseif(!empty($statusMsg) && ($statusMsgType == 'error')){ ?>
+                <div class="col-md-12">
+                    <div class="alert alert-danger"><?php echo $statusMsg; ?></div>
+                </div>
+                <?php } ?>
+				
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Your Cart</span>
+                        <span class="badge badge-secondary badge-pill"><?php echo $cart->total_items(); ?></span>
+                    </h4>
+                    <ul class="list-group mb-3">
                     <?php 
-                    // Get order items from the database 
-                    $sqlQ = "SELECT i.*, p.name, p.price FROM order_items as i LEFT JOIN products as p ON p.id = i.product_id WHERE i.order_id=?"; 
-                    $stmt = $db->prepare($sqlQ); 
-                    $stmt->bind_param("i", $db_id); 
-                    $db_id = $order_id; 
-                    $stmt->execute(); 
-                    $result = $stmt->get_result(); 
-                     
-                    if($result->num_rows > 0){  
-                        while($item = $result->fetch_assoc()){ 
-                            $price = $item["price"]; 
-                            $quantity = $item["quantity"]; 
-                            $sub_total = ($price*$quantity); 
-                            $proImg = !empty($item["image"])?'images/products/'.$item["image"]:'images/demo-img.png'; 
+                    if($cart->total_items() > 0){ 
+                        // Get cart items from session 
+                        $cartItems = $cart->contents(); 
+                        foreach($cartItems as $item){ 
                     ?>
-                            <tr>
-                                <td><img src="<?php echo $proImg; ?>" alt="..."></td>
-                                <td><?php echo $item["name"]; ?></td>
-                                <td><?php echo CURRENCY_SYMBOL.$price.' '.CURRENCY; ?></td>
-                                <td><?php echo $quantity; ?></td>
-                            <td><?php echo CURRENCY_SYMBOL.$sub_total.' '.CURRENCY; ?></td>
-                        </tr>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0"><?php echo $item["name"]; ?></h6>
+                                <small class="text-muted"><?php echo CURRENCY_SYMBOL.$item["price"]; ?>(<?php echo $item["qty"]; ?>)</small>
+                            </div>
+                            <span class="text-muted"><?php echo CURRENCY_SYMBOL.$item["subtotal"]; ?></span>
+                        </li>
                     <?php } } ?>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="col mb-2">
-                <div class="row">
-                    <div class="col-sm-12  col-md-6">
-                        <a href="index.php" class="btn btn-block btn-primary"><i class="ialeft"></i>Continue Shopping</a>
-                    </div>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total (<?php echo CURRENCY; ?>)</span>
+                            <strong><?php echo CURRENCY_SYMBOL.$cart->total(); ?></strong>
+                        </li>
+                    </ul>
+                    <a href="index.php" class="btn btn-sm btn-info">+ add items</a>
+                </div>
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Contact Details</h4>
+                    <form method="post" action="cartAction.php">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="first_name">First Name</label>
+                                <input type="text" class="form-control" name="first_name" value="<?php echo !empty($postData['first_name'])?$postData['first_name']:''; ?>" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" class="form-control" name="last_name" value="<?php echo !empty($postData['last_name'])?$postData['last_name']:''; ?>" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="email" value="<?php echo !empty($postData['email'])?$postData['email']:''; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control" name="phone" value="<?php echo !empty($postData['phone'])?$postData['phone']:''; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="last_name">Address</label>
+                            <input type="text" class="form-control" name="address" value="<?php echo !empty($postData['address'])?$postData['address']:''; ?>" required>
+                        </div>
+                        <input type="hidden" name="action" value="placeOrder"/>
+                        <input class="btn btn-success btn-block" type="submit" name="checkoutSubmit" value="Place Order">
+                    </form>
                 </div>
             </div>
-        <?php }else{ ?>
-        <div class="col-md-12">
-            <div class="alert alert-danger">Your order submission failed!</div>
         </div>
-        <?php } ?>
     </div>
 </div>
 
