@@ -27,6 +27,16 @@ if (!empty($sessData['status']['msg'])) {
 }
 ?>
 
+<?php if (!empty($statusMsg) && ($statusMsgType == 'success')) { ?>
+    <div class="col-md-12">
+        <div class="alert alert-success"><?php echo $statusMsg; ?></div>
+    </div>
+<?php } elseif (!empty($statusMsg) && ($statusMsgType == 'error')) { ?>
+    <div class="col-md-12">
+        <div class="alert alert-danger"><?php echo $statusMsg; ?></div>
+    </div>
+<?php } ?>
+
 <!-- BREADCRUMB AREA START -->
 <div class="ltn__breadcrumb-area ltn__breadcrumb-area-4 ltn__breadcrumb-color-white---">
     <div class="container">
@@ -51,15 +61,6 @@ if (!empty($sessData['status']['msg'])) {
 <div class="ltn__checkout-area mb-100">
     <div class="container">
         <div class="row">
-            <?php if (!empty($statusMsg) && ($statusMsgType == 'success')) { ?>
-                <div class="col-md-12">
-                    <div class="alert alert-success"><?php echo $statusMsg; ?></div>
-                </div>
-            <?php } elseif (!empty($statusMsg) && ($statusMsgType == 'error')) { ?>
-                <div class="col-md-12">
-                    <div class="alert alert-danger"><?php echo $statusMsg; ?></div>
-                </div>
-            <?php } ?>
             <div class="col-lg-12">
                 <div class="ltn__checkout-inner">
                     <div class="ltn__checkout-single-content ltn__returning-customer-wrap">
