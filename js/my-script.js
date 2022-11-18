@@ -32,13 +32,7 @@ $("input[name='quantity']").TouchSpin({
 });
 
 $('#btnHehe').on('click', function () {
-    var orderForm = $('#orderForm');
-    if (orderForm[0].checkValidity()) {
-        orderForm.submit();
-    } else {
-        toastr.options.positionClass = 'toast-bottom-right';
-        toastr.warning('Bạn chưa điền hết các trường thông tin!');    
-    }
+    orderForm.submit();
 });
 
 function updateCartItem(obj, id) {
