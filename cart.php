@@ -349,6 +349,11 @@ $cart = new Cart;
                 alert('Cart update failed, please try again.');
             }
         });
+
+    $('.cart-product-remove').on('click', function(e) {
+        e.preventDefault();
+        alert('hehe');
+    });
     }
 </script>
 

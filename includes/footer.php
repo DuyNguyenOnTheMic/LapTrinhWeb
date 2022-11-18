@@ -146,3 +146,25 @@
     </div>
 </footer>
 <!-- FOOTER AREA END -->
+
+<!-- All JS Plugins -->
+<script src="js/plugins.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<!-- Main JS -->
+<script src="js/main.js"></script>
+<script>
+    $('.btnAddToCart').on('click', function(e) {
+        toastr.options.positionClass = 'toast-bottom-right';
+        toastr.success('Thêm thành công!');
+        e.preventDefault();
+        $.ajax({
+            url: $(this).attr('href'),
+        }).done(function(data) {
+            location.reload();
+        });
+    });
+</script>
+
+</body>
+
+</html>

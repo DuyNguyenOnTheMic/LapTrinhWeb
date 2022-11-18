@@ -661,8 +661,6 @@ $result = $stmt->get_result();
 </div>
 <!-- BRAND LOGO AREA END -->
 
-<?php require_once 'includes/footer.php'; ?>
-
 <!-- MODAL AREA START (Quick View Modal) -->
 <div class="ltn__modal-area ltn__quick-view-modal-area">
     <div class="modal fade" id="quick_view_modal" tabindex="-1">
@@ -864,24 +862,4 @@ $result = $stmt->get_result();
 </div>
 <!-- preloader area end -->
 
-<!-- All JS Plugins -->
-<script src="js/plugins.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<!-- Main JS -->
-<script src="js/main.js"></script>
-<script>
-    $('.btnAddToCart').on('click', function(e) {
-        toastr.options.positionClass = 'toast-bottom-right';
-        toastr.success('Thêm thành công!');
-        e.preventDefault();
-        $.ajax({
-            url: $(this).attr('href'),
-        }).done(function(data) {
-            location.reload();
-        });
-    });
-</script>
-
-</body>
-
-</html>
+<?php require_once 'includes/footer.php'; ?>
