@@ -93,7 +93,7 @@ if (!empty($sessData['status']['msg'])) {
                     <div class="ltn__checkout-single-content mt-50">
                         <h4 class="title-2">Billing Details</h4>
                         <div class="ltn__checkout-single-content-info">
-                            <form method="POST">
+                            <form method="POST" action="cartAction.php">
                                 <h6>Personal Information</h6>
                                 <div class="row">
                                     <div class="col-md-6">
