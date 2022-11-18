@@ -179,7 +179,7 @@ if (!empty($sessData['status']['msg'])) {
                         <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
                     </div>
                     <p><?php $sessData ?></p>
-                    <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit" onclick="$('#orderForm')[0].checkValidity()?$('#orderForm').submit():alert('bạn chưa điền hết các trường thông tin!');">Place order</button>
+                    <button class="btn theme-btn-1 btn-effect-1 text-uppercase" id="btnHehe" type="submit">Place order</button>
                 </div>
             </div>
             <div class="col-lg-6">

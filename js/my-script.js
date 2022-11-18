@@ -31,6 +31,16 @@ $("input[name='quantity']").TouchSpin({
     buttonup_class: "btn theme-btn-1 border-0 px-4"
 });
 
+$('#btnHehe').on('click', function () {
+    var orderForm = $('#orderForm');
+    if (orderForm[0].checkValidity()) {
+        orderForm.submit();
+    } else {
+        toastr.options.positionClass = 'toast-bottom-right';
+        toastr.warning('Bạn chưa điền hết các trường thông tin!');    
+    }
+});
+
 function updateCartItem(obj, id) {
     $.get("cartAction.php", {
         action: "updateCartItem",
