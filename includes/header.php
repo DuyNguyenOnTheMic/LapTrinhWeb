@@ -1,6 +1,7 @@
 <?php
 // Include the database connection file 
 require_once 'config/dbConnect.php';
+require_once 'includes/compress.php';
 
 // Initialize shopping cart class 
 include_once 'Cart.class.php';

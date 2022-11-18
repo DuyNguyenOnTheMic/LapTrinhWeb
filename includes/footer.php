@@ -180,7 +180,11 @@
         if (result == true) {
             // Delete cart item
             var id = $(this).data('id');
-            window.location.href='cartAction.php?action=removeCartItem&id=' + id;
+            $.ajax({
+                url: 'cartAction.php?action=removeCartItem&id=' + id,
+            }).done(function(data) {
+                location.reload();
+            });
         } else {
             return false;
         }
