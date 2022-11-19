@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php'; 
+require_once '../config/config.php'; 
 
 class Db {
     // variable uses to connect db
