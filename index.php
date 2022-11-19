@@ -224,9 +224,6 @@ $result = $stmt->get_result();
         </div>
     </div>
 </div>
-</div>
-</div>
-<!-- PRODUCT SLIDER AREA END -->
 
 <!-- BANNER AREA START -->
 <div class="ltn__banner-area ">
@@ -616,7 +613,5 @@ $result = $stmt->get_result();
     </div>
 </div>
 <!-- BLOG AREA END -->
-</div>
-<!-- Body main wrapper end -->
 
 <?php require_once 'includes/footer.php'; ?>
