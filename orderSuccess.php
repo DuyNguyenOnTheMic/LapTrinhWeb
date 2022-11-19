@@ -2,6 +2,8 @@
 if(empty($_REQUEST['id'])){ 
     header("Location: index.php"); 
 } 
+// include header
+require_once 'includes/header.php';
 $order_id = base64_decode($_REQUEST['id']); 
 // Include the database connection file 
 require_once 'config/dbConnect.php'; 
@@ -19,23 +21,29 @@ if($result->num_rows > 0){
     header("Location: index.php"); 
 } 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Order Status - PHP Shopping Cart</title>
-<meta charset="utf-8">
-
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom style -->
-<link href="css/style.css" rel="stylesheet">
-</head>
-<body>
-<div class="container">
-    <h1>ORDER STATUS</h1>
-    <div class="col-12">
+<!-- BREADCRUMB AREA START -->
+<div class="ltn__breadcrumb-area ltn__breadcrumb-area-4 ltn__breadcrumb-color-white---">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn__breadcrumb-inner text-center">
+                    <h1 class="ltn__page-title">Order status</h1>
+                    <div class="ltn__breadcrumb-list">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li>Order status</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BREADCRUMB AREA END -->
+<div class="liton__shoping-cart-area mb-100">
+    <div class="container">
+        <div class="row">
+           <div class="col-12">
         <?php if(!empty($orderInfo)){ ?>
             <div class="col-md-12">
                 <div class="alert alert-success">Your order has been placed successfully.</div>
@@ -80,10 +88,12 @@ if($result->num_rows > 0){
                             $price = $item["price"]; 
                             $quantity = $item["quantity"]; 
                             $sub_total = ($price*$quantity); 
-                            $proImg = !empty($item["image"])?'images/products/'.$item["image"]:'images/demo-img.png'; 
+                            $proImg = !empty($item["image"]) ? 'img/product/' . $item["image"] : 'images/demo-img.png';
                     ?>
                             <tr>
-                                <td><img src="<?php echo $proImg; ?>" alt="..."></td>
+                                <td class="cart-product-image"> 
+                                     <a href="product-details.html"><img src="<?php echo $proImg; ?>" alt="#"></a>
+                                </td>
                                 <td><?php echo $item["name"]; ?></td>
                                 <td><?php echo CURRENCY_SYMBOL.$price.' '.CURRENCY; ?></td>
                                 <td><?php echo $quantity; ?></td>
@@ -97,7 +107,7 @@ if($result->num_rows > 0){
             <div class="col mb-2">
                 <div class="row">
                     <div class="col-sm-12  col-md-6">
-                        <a href="index.php" class="btn btn-block btn-primary"><i class="ialeft"></i>Continue Shopping</a>
+                        <a href="index.php" class="theme-btn-1 btn btn-effect-1"><i class="ialeft"></i>Continue Shopping</a>
                     </div>
                 </div>
             </div>
@@ -107,6 +117,9 @@ if($result->num_rows > 0){
         </div>
         <?php } ?>
     </div>
+
+        </div>
+    </div>
 </div>
-</body>
-</html>
+    
+    <?php require_once 'includes/footer.php'; ?>
