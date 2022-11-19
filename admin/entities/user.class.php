@@ -1,5 +1,6 @@
 <?php
-    require_once("config/../../dbConnect.php");
+    require_once("login-config/db.class.php");
+    
     class User {
         public $userId;
         public $userName;
@@ -13,8 +14,9 @@
         }
 
         public function Save() {
+            $db = new Db();
             $sql = "INSERT INTO `user`(`username`, `email`, `password`) VALUES ('".mysqli_real_escape_string($db->Connect(),
-            $this->userName)."','".mysqli_real_escape_string($db,
+            $this->userName)."','".mysqli_real_escape_string($db->Connect(),
             $this->email)."','".md5(mysqli_real_escape_string($db->Connect(), $this->password))."')";
             $result = $db->QueryExecute($sql);
             return $result;
@@ -28,4 +30,3 @@
             return $result;
         }
     }
-?>
