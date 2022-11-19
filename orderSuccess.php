@@ -76,7 +76,7 @@ if ($result->num_rows > 0) {
                             <tbody>
                                 <?php
                                 // Get order items from the database 
-                                $sqlQ = "SELECT i.*, p.name, p.price FROM order_items as i LEFT JOIN products as p ON p.id = i.product_id WHERE i.order_id=?";
+                                $sqlQ = "SELECT i.*, p.name, p.price, p.image FROM order_items as i LEFT JOIN products as p ON p.id = i.product_id WHERE i.order_id=?";
                                 $stmt = $db->prepare($sqlQ);
                                 $stmt->bind_param("i", $db_id);
                                 $db_id = $order_id;
@@ -88,7 +88,7 @@ if ($result->num_rows > 0) {
                                         $price = $item["price"];
                                         $quantity = $item["quantity"];
                                         $sub_total = ($price * $quantity);
-                                        $proImg = !empty($row["image"]) ? 'img/product/' . $row["image"] : 'images/demo-img.png';
+                                        $proImg = !empty($item["image"]) ? 'img/product/' . $item["image"] : 'images/demo-img.png';
                                 ?>
                                         <tr>
                                             <td class="cart-product-image">
