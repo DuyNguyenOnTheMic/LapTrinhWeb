@@ -1,4 +1,4 @@
-<?php require_once 'includes/header_admin.php'; ?>
+<?php require_once 'includes/header.php'; ?>
 
 <!-- BEGIN: Content -->
 <div class="content">
@@ -364,4 +364,4 @@
 </div>
 </div>
 
-<?php require_once 'includes/footer_admin.php'; ?>
+<?php require_once 'includes/footer.php'; ?>
