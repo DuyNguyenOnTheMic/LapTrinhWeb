@@ -5,7 +5,7 @@ require_once '../includes/compress.php';
 
 ?>
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="vi" class="light">
 <!-- BEGIN: Head -->
 
 <head>
