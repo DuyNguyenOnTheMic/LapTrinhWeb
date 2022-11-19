@@ -77,27 +77,18 @@ if (isset($_REQUEST['action']) && !empty($_REQUEST['action'])) {
         }
 
         if (empty($errorMsg)) {
-            // Insert customer data into the database 
-            $sqlQ = "INSERT INTO customers (first_name,last_name,email,phone,address,created,modified) VALUES (?,?,?,?,?,NOW(),NOW())";
-            $stmt = $db->prepare($sqlQ);
-            $stmt->bind_param("sssss", $db_first_name, $db_last_name, $db_email, $db_phone, $db_address);
-            $db_first_name = $first_name;
-            $db_last_name = $last_name;
-            $db_email = $email;
-            $db_phone = $phone;
-            $db_address = $address;
-            $insertCust = $stmt->execute();
-
-            if ($insertCust) {
-                $custID = $stmt->insert_id;
-
                 // Insert order info in the database 
-                $sqlQ = "INSERT INTO orders (customer_id,grand_total,created,status) VALUES (?,?,NOW(),?)";
+                $sqlQ = "INSERT INTO orders(grand_total, status,first_name, last_name, phone, address, email, created) 
+                VALUES (?,?,?,?,?,?,?,NOW())";
                 $stmt = $db->prepare($sqlQ);
-                $stmt->bind_param("ids", $db_customer_id, $db_grand_total, $db_status);
-                $db_customer_id = $custID;
+                $stmt->bind_param("sssssss", $db_grand_total, $db_status, $db_first_name, $db_last_name, $db_phone, $db_address, $db_email);
                 $db_grand_total = $cart->total();
                 $db_status = 'Pending';
+                $db_first_name = $first_name;
+                $db_last_name = $last_name;        
+                $db_phone = $phone;
+                $db_address = $address;
+                $db_email = $email;
                 $insertOrder = $stmt->execute();
 
                 if ($insertOrder) {
@@ -131,10 +122,7 @@ if (isset($_REQUEST['action']) && !empty($_REQUEST['action'])) {
                     $sessData['status']['type'] = 'error';
                     $sessData['status']['msg'] = 'Something went wrong, please try again.';
                 }
-            } else {
-                $sessData['status']['type'] = 'error';
-                $sessData['status']['msg'] = 'Something went wrong, please try again.';
-            }
+           
         } else {
             $sessData['status']['type'] = 'error';
             $sessData['status']['msg'] = '<p>Please fill all the mandatory fields.</p>' . $errorMsg;
