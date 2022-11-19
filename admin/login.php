@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+if (isset($_SESSION['user']) != "") {
+    header("Location: index.php");
+}
+require_once("entities/user.class.php");
+
+$message = "";
+if (isset($_POST['btn-login'])) {
+    $u_name = $_POST['txtLoginName'];
+    $u_email = null;
+    $u_pass = $_POST['txtLoginPass'];
+    $account = new User($u_name, $u_email, $u_pass);
+    $result = $account->checkLogin($u_name, $u_pass);
+    if (mysqli_num_rows($result) <= 0) {
+        $message = "Email hoặc mật khẩu không đúng!";
+    } else {
+        $_SESSION['user'] = $u_name;
+        header("Location: trangchu.php");
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="vi" class="light">
 <!-- BEGIN: Head -->
