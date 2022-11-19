@@ -127,7 +127,5 @@ $cart = new Cart;
     </div>
 </div>
 <!-- SHOPING CART AREA END -->
-</div>
-<!-- Body main wrapper end -->
 
 <?php require_once 'includes/footer.php'; ?>
