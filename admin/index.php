@@ -361,7 +361,5 @@
     <!-- END: Delete Confirmation Modal -->
 </div>
 <!-- END: Content -->
-</div>
-</div>
 
 <?php require_once 'includes/footer.php'; ?>
