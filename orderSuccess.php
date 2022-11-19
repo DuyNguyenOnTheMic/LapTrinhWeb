@@ -3,12 +3,10 @@ if(empty($_REQUEST['id'])){
     header("Location: index.php"); 
 } 
 $order_id = base64_decode($_REQUEST['id']); 
- 
 // Include the database connection file 
-require_once 'dbConnect.php'; 
- 
+require_once 'config/dbConnect.php'; 
 // Fetch order details from the database 
-$sqlQ = "SELECT r.*, c.first_name, c.last_name, c.email, c.phone, c.address FROM orders as r LEFT JOIN customers as c ON c.id = r.customer_id WHERE r.id=?"; 
+$sqlQ = "SELECT * FROM orders WHERE id=?"; 
 $stmt = $db->prepare($sqlQ); 
 $stmt->bind_param("i", $db_id); 
 $db_id = $order_id; 
