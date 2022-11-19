@@ -1,10 +1,13 @@
 <?php
+require_once '../includes/compress.php';
+require_once("entities/user.class.php");
+
 session_start();
 
+// Redirect to home page if user already has session
 if (isset($_SESSION['user']) != "") {
     header("Location: index.php");
 }
-require_once("entities/user.class.php");
 
 $message = "";
 if (isset($_POST['btn-login'])) {
