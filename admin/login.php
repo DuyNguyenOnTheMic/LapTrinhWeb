@@ -68,8 +68,8 @@ if (isset($_POST['btn-login'])) {
                     </h2>
                     <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">A few more clicks to sign in to your account. Manage all your e-commerce accounts in one place</div>
                     <div class="intro-x mt-8">
-                        <input type="text" class="intro-x login__input form-control py-3 px-4 block" placeholder="Email">
-                        <input type="password" class="intro-x login__input form-control py-3 px-4 block mt-4" placeholder="Password">
+                        <input type="text" class="intro-x login__input form-control py-3 px-4 block" id="txtLoginName" name="txtLoginName" placeholder="Email">
+                        <input type="password" class="intro-x login__input form-control py-3 px-4 block mt-4" id="txtLoginPass" name="txtLoginPass" placeholder="Password">
                     </div>
                     <div class="intro-x flex text-slate-600 dark:text-slate-500 text-xs sm:text-sm mt-4">
                         <div class="flex items-center mr-auto">
@@ -79,7 +79,7 @@ if (isset($_POST['btn-login'])) {
                         <a href="">Forgot Password?</a>
                     </div>
                     <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
-                        <button class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">Login</button>
+                        <button class="btn btn-primary btn-login py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">Login</button>
                     </div>
                     <div class="intro-x mt-10 xl:mt-24 text-slate-600 dark:text-slate-500 text-center xl:text-left"> By signin up, you agree to our <a class="text-primary dark:text-slate-200" href="">Terms and Conditions</a> & <a class="text-primary dark:text-slate-200" href="">Privacy Policy</a> </div>
                 </div>
