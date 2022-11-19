@@ -874,7 +874,7 @@ require_once '../includes/compress.php';
                             <hr class="dropdown-divider border-white/[0.08]">
                         </li>
                         <li>
-                            <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="toggle-right" class="w-4 h-4 mr-2"></i> Logout </a>
+                            <a href="logout.php" class="dropdown-item hover:bg-white/5"> <i data-lucide="toggle-right" class="w-4 h-4 mr-2"></i> Logout </a>
                         </li>
                     </ul>
                 </div>
