@@ -25,7 +25,7 @@
         public static function CheckLogin($userName, $password) {
             $password = md5($password);
             $db = new Db();
-            $sql = "SELECT * FROM user WHERE email = '$userName' AND password = '$password'";
+            $sql = "SELECT * FROM users WHERE email = '$userName' AND password = '$password'";
             $result = $db->QueryExecute($sql);
             return $result;
         }
