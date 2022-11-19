@@ -14,10 +14,10 @@ if (isset($_POST['btn-login'])) {
     $account = new User($u_name, $u_email, $u_pass);
     $result = $account->checkLogin($u_name, $u_pass);
     if (mysqli_num_rows($result) <= 0) {
-        $message = "Email hoặc mật khẩu không đúng!";
+        $message = "Wrong email or password!";
     } else {
         $_SESSION['user'] = $u_name;
-        header("Location: trangchu.php");
+        header("Location: index.php");
     }
 }
 ?>
@@ -71,9 +71,16 @@ if (isset($_POST['btn-login'])) {
                         <div class="intro-x mt-8">
                             <input type="text" class="intro-x login__input form-control py-3 px-4 block" id="txtLoginName" name="txtLoginName" placeholder="Email">
                             <input type="password" class="intro-x login__input form-control py-3 px-4 block mt-4" id="txtLoginPass" name="txtLoginPass" placeholder="Password">
+                            <div class="text-danger mt-4"><?php if($message!="") { echo $message; } ?></div>
                         </div>
-                        <div class="text-danger"><?php if($message!="") { echo $message; } ?></div>
-                        <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
+                        <div class="intro-x flex text-slate-600 dark:text-slate-500 text-xs sm:text-sm mt-4">
+                            <div class="flex items-center mr-auto">
+                                <input id="remember-me" type="checkbox" class="form-check-input border mr-2">
+                                <label class="cursor-pointer select-none" for="remember-me">Remember me</label>
+                            </div>
+                            <a href="">Forgot Password?</a> 
+                        </div>
+                        <div class="intro-x mt-5 xl:mt-4 text-center xl:text-left">
                             <button class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top" name="btn-login">Login</button>
                         </div>
                     </form>
