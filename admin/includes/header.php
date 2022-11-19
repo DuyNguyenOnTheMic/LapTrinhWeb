@@ -3,6 +3,11 @@
 require_once '../config/dbConnect.php';
 require_once '../includes/compress.php';
 
+session_start();
+if (isset($_SESSION['user']) == "") {
+    header("Location: login.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="vi" class="light">
@@ -711,7 +716,7 @@ require_once '../includes/compress.php';
                                 <div class="w-8 h-8 image-fit">
                                     <img alt="Midone - HTML Admin Template" class="rounded-full" src="images/profile-3.jpg">
                                 </div>
-                                <div class="ml-3">Al Pacino</div>
+                                <div class="ml-3"><?php echo $_SESSION['user'] ?></div>
                                 <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">alpacino@left4code.com</div>
                             </a>
                             <a href="" class="flex items-center mt-2">
@@ -732,7 +737,7 @@ require_once '../includes/compress.php';
                                 <div class="w-8 h-8 image-fit">
                                     <img alt="Midone - HTML Admin Template" class="rounded-full" src="images/profile-6.jpg">
                                 </div>
-                                <div class="ml-3">Al Pacino</div>
+                                <div class="ml-3"><?php echo $_SESSION['user'] ?></div>
                                 <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">alpacino@left4code.com</div>
                             </a>
                         </div>
@@ -782,7 +787,7 @@ require_once '../includes/compress.php';
                             </div>
                             <div class="ml-2 overflow-hidden">
                                 <div class="flex items-center">
-                                    <a href="javascript:;" class="font-medium truncate mr-5">Al Pacino</a>
+                                    <a href="javascript:;" class="font-medium truncate mr-5"><?php echo $_SESSION['user'] ?></a>
                                     <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">01:10 PM</div>
                                 </div>
                                 <div class="w-full truncate text-slate-500 mt-0.5">It is a long established fact that a reader will be adminracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
@@ -821,7 +826,7 @@ require_once '../includes/compress.php';
                             </div>
                             <div class="ml-2 overflow-hidden">
                                 <div class="flex items-center">
-                                    <a href="javascript:;" class="font-medium truncate mr-5">Al Pacino</a>
+                                    <a href="javascript:;" class="font-medium truncate mr-5"><?php echo $_SESSION['user'] ?></a>
                                     <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">01:10 PM</div>
                                 </div>
                                 <div class="w-full truncate text-slate-500 mt-0.5">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomi</div>
@@ -834,7 +839,7 @@ require_once '../includes/compress.php';
                             </div>
                             <div class="ml-2 overflow-hidden">
                                 <div class="flex items-center">
-                                    <a href="javascript:;" class="font-medium truncate mr-5">Al Pacino</a>
+                                    <a href="javascript:;" class="font-medium truncate mr-5"><?php echo $_SESSION['user'] ?></a>
                                     <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">06:05 AM</div>
                                 </div>
                                 <div class="w-full truncate text-slate-500 mt-0.5">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 20</div>
@@ -851,9 +856,9 @@ require_once '../includes/compress.php';
                 </div>
                 <div class="dropdown-menu w-56">
                     <ul class="dropdown-content bg-primary/80 before:block before:absolute before:bg-black before:inset-0 before:rounded-md before:z-[-1] text-white">
-                        <li class="p-2">
-                            <div class="font-medium">Al Pacino</div>
-                            <div class="text-xs text-white/60 mt-0.5 dark:text-slate-500">DevOps Engineer</div>
+                        <li class="p-1">
+                            <div class="font-medium"><?php echo $_SESSION['user'] ?></div>
+                            <div class="text-xs text-white/60 mt-0.5 dark:text-slate-500">VLU student</div>
                         </li>
                         <li>
                             <hr class="dropdown-divider border-white/[0.08]">
