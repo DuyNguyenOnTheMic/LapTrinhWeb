@@ -70,7 +70,7 @@ if ($_POST) {
                                         </div>
                                     </div>
                                     <div class="text-right mt-5">
-                                        <button type="button" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+                                        <button type="button" class="btn btn-outline-secondary w-24 mr-1" onclick="window.location.href='index.php'">Cancel</button>
                                         <button type="submit" class="btn btn-primary w-24" id="submit" name="submit">Save</button>
                                     </div>
                                 </div>
