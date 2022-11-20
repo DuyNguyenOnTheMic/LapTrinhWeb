@@ -1,5 +1,5 @@
-<?php 
-require_once 'includes/header.php'; 
+<?php
+require_once 'includes/header.php';
 require_once '../includes/compress.php';
 
 require_once '../config/dbConnect.php';
@@ -13,9 +13,9 @@ $result = $stmt->get_result();
 <div class="content">
     <h2 class="intro-y text-lg font-medium mt-10">
         Order List
-        </h2>
+    </h2>
     <div class="grid grid-cols-12 gap-6 mt-5">
-        
+
         <!-- BEGIN: Data List -->
         <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
             <table class="table table-report -mt-2">
@@ -32,49 +32,49 @@ $result = $stmt->get_result();
                     </tr>
                 </thead>
                 <tbody>
-                <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-            ?>
-                    <tr class="intro-x">
-                        <td class="w-40">
-                            <div class="flex">
-                            <?php echo $row["id"]; ?>
-                            </div>
-                        </td>
-                        <td>
-                           <?php echo number_format($row["grand_total"]); ?> VND
-                        </td>
-                        <td class="text-center"><?php echo $row["first_name"];?>  <?php echo $row["last_name"];?></td>
-                        <td class="text-center">
-                            <?php echo $row["phone"]; ?> 
-                        </td>
-                        <td class="text-center">
-                            <?php echo $row["address"]; ?> 
-                        </td>
-                        <td class="text-center">
-                            <?php echo $row["email"]; ?> 
-                        </td> 
-                        <td class="text-center">
-                        <span class="text-danger rounded px-2 ml-1"><?php echo $row['status']; ?></span> 
-                        </td>
-                        <td class="table-report__action w-56">
-                            <div class="flex justify-center items-center">
-                                <a class="flex items-center mr-3" href="order_details.php?id=<?= $row['id']?>"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Details </a>
-                            </div>
-                        </td>
-                    </tr>
-                    <?php }
-            } else { ?>
-                <p>Order(s) not found.....</p>
-            <?php } ?>
-                 
-                   
+                    <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                    ?>
+                            <tr class="intro-x">
+                                <td>
+                                    <div class="flex">
+                                        <?php echo $row["id"]; ?>
+                                    </div>
+                                </td>
+                                <td>
+                                    <?php echo number_format($row["grand_total"]); ?> VND
+                                </td>
+                                <td class="text-center"><?php echo $row["first_name"]; ?> <?php echo $row["last_name"]; ?></td>
+                                <td class="text-center">
+                                    <?php echo $row["phone"]; ?>
+                                </td>
+                                <td class="text-center">
+                                    <?php echo $row["address"]; ?>
+                                </td>
+                                <td class="text-center">
+                                    <?php echo $row["email"]; ?>
+                                </td>
+                                <td class="text-center">
+                                    <span class="text-danger rounded px-2 ml-1"><?php echo $row['status']; ?></span>
+                                </td>
+                                <td class="table-report__action w-56">
+                                    <div class="flex justify-center items-center">
+                                        <a class="flex items-center mr-3" href="orderDetails.php?id=<?= $row['id'] ?>"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Details </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php }
+                    } else { ?>
+                        <p>Order(s) not found.....</p>
+                    <?php } ?>
+
+
                 </tbody>
             </table>
         </div>
         <!-- END: Data List -->
-      
+
     </div>
     <!-- BEGIN: Delete Confirmation Modal -->
     <div id="delete-confirmation-modal" class="modal" tabindex="-1" aria-hidden="true">
