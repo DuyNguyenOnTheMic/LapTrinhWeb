@@ -80,7 +80,7 @@ if ($result->num_rows > 0) {
                                     $price = $item["price"];
                                     $quantity = $item["quantity"];
                                     $sub_total = ($price * $quantity);
-                                    $proImg = !empty($item["image"]) ? '../img/product/' . $item["image"] : '../images/demo-img.png';
+                                    $proImg = !empty($item["image"]) ? 'images/' . $item["image"] : '../images/demo-img.png';
                             ?>
                                     <tr>
                                         <td class="cart-product-image">
