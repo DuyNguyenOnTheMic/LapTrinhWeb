@@ -59,7 +59,7 @@ if ($_POST) {
                                     </div>
                                     <div class="mt-3">
                                         <label class="form-label">Image: </label>
-                                        <img id="imgOutput" class="text-center p-5" width="200" />
+                                        <img id="imgOutput" class="text-center p-2" width="200" />
                                         <div class="file-input">
                                             <input type="file" name="image" id="image" onchange="loadFile(event)" class="file-input__input" />
                                             <label class="file-input__label" for="image">
