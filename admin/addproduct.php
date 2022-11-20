@@ -8,6 +8,7 @@ require_once '../config/dbConnect.php';
         $gia = $_POST['price'];
         $mota = $_POST['description'];
         $hinhanh = $_FILES['image']['name'];
+    
 
         //Lay dia chi da tao
         $target_dir = "./images/";
@@ -25,6 +26,7 @@ require_once '../config/dbConnect.php';
             $db_name = $tensp;
             $db_price = $gia;
             $db_des = $mota;
+           
             $insertOrder = $stmt->execute();
 
             
@@ -59,18 +61,18 @@ require_once '../config/dbConnect.php';
                             <!-- BEGIN: Uplaod Product -->
                             <div class="intro-y box p-5">
                                 <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
-                                    <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> Upload Product </div>
+                                    <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> TẢI SẢN PHẨM </div>
                                     <div class="mt-5">
                                         <div class="form-inline items-start flex-col xl:flex-row mt-10">
                                             <div class="form-label w-full xl:w-64 xl:!mr-10">
                                                 <div class="text-left">
                                                     <div class="flex items-center">
-                                                        <div class="font-medium">Product Photos</div>
-                                                        <div class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">Required</div>
+                                                        <div class="font-medium">Hình ảnh sản phẩm</div>
+                                                       
                                                     </div>
                                                     <div class="leading-relaxed text-slate-500 text-xs mt-3">
-                                                        <div>The image format is .jpg .jpeg .png and a minimum size of 300 x 300 pixels (For optimal images use a minimum size of 700 x 700 pixels).</div>
-                                                        <div class="mt-2">Select product photos or drag and drop up to 5 photos at once here. Include min. 3 attractive photos to make the product more attractive to buyers.</div>
+                                                        <div>Định dạng hình ảnh là .jpg .jpeg .png và kích thước tối thiểu là 300 x 300 pixel (Để hình ảnh tối ưu sử dụng kích thước tối thiểu là 600 x 780 pixel).</div>
+                                                        <div class="mt-2">Chọn ảnh sản phẩm hoặc kéo thả tối đa 5 ảnh cùng lúc vào đây. Bao gồm tối thiểu. 3 ảnh hấp dẫn để sản phẩm thu hút người mua hơn.</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -94,21 +96,21 @@ require_once '../config/dbConnect.php';
                             <!-- BEGIN: Product Information -->
                             <div class="intro-y box p-5 mt-5">
                                 <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
-                                    <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> Product Information </div>
+                                    <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> THÔNG TIN SẢN PHẨM </div>
                                     <div class="mt-5">
                                         <div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
                                             <div class="form-label xl:w-64 xl:!mr-10">
                                                 <div class="text-left">
                                                     <div class="flex items-center">
-                                                        <div class="font-medium">Product Name</div>
-                                                        <div class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">Required</div>
+                                                        <div class="font-medium">Tên Sản Phẩm</div>
+                                                      
                                                     </div>
-                                                    <div class="leading-relaxed text-slate-500 text-xs mt-3"> Include min. 40 characters to make it more attractive and easy for buyers to find, consisting of product type, brand, and information such as color, material, or type. </div>
+                                                    <div class="leading-relaxed text-slate-500 text-xs mt-3"> Bao gồm tối thiểu. 40 ký tự để người mua dễ tìm thấy và hấp dẫn hơn, bao gồm loại sản phẩm, nhãn hiệu và thông tin như màu sắc, chất liệu hoặc loại. </div>
                                                 </div>
                                             </div>
                                             <div class="w-full mt-3 xl:mt-0 flex-1">
                                                 <input id="product-name" type="text" class="form-control" placeholder="Product name" name = "name">
-                                                <div class="form-help text-right">Maximum character 0/70</div>
+                                                <div class="form-help text-right">Tối đa 0/70</div>
                                             </div>
                                         </div>
                                     </div>
@@ -117,21 +119,21 @@ require_once '../config/dbConnect.php';
 
                             <div class="intro-y box p-5 mt-5">
                                 <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
-                                    <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> Product Price </div>
+                                    <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> GIÁ SẢN PHẨM</div>
                                     <div class="mt-5">
                                         <div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
                                             <div class="form-label xl:w-64 xl:!mr-10">
                                                 <div class="text-left">
                                                     <div class="flex items-center">
-                                                        <div class="font-medium">Product Price</div>
-                                                        <div class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">Required</div>
+                                                        <div class="font-medium">GIá sản phẩm</div>
+                                                        
                                                     </div>
-                                                    <div class="leading-relaxed text-slate-500 text-xs mt-3"> Gía nào mắc nhất thế giới thì gắn dô. </div>
+                                                    <div class="leading-relaxed text-slate-500 text-xs mt-3"> Gía thành của sản phẩm</div>
                                                 </div>
                                             </div>
                                             <div class="w-full mt-3 xl:mt-0 flex-1">
                                                 <input id="product-name" type="text" class="form-control" placeholder="Product Price" name = "price">
-                                                <div class="form-help text-right">Maximum 100 triệu</div>
+                                                <div class="form-help text-right">tối đa 100 triệu</div>
                                             </div>
                                         </div>
                                     </div>
@@ -141,25 +143,25 @@ require_once '../config/dbConnect.php';
                             <!-- BEGIN: Product Detail -->
                             <div class="intro-y box p-5 mt-5">
                                 <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
-                                    <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> Product Detail </div>
+                                    <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> CHI TIẾT SẢN PHẨM </div>
                                     <div class="mt-5">
                                         <div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
                                             <div class="form-label xl:w-64 xl:!mr-10">
                                                 <div class="text-left">
                                                     <div class="flex items-center">
-                                                        <div class="font-medium">Product Description</div>
-                                                        <div class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">Required</div>
+                                                        <div class="font-medium">Mô Tả Sản Phẩm</div>
+                                                        
                                                     </div>
                                                     <div class="leading-relaxed text-slate-500 text-xs mt-3">
-                                                        <div>Make sure the product description provides a detailed explanation of your product so that it is easy to understand and find your product.</div>
-                                                        <div class="mt-2">It is recommended not to enter info on mobile numbers, e-mails, etc. into the product description to protect your personal data.</div>
+                                                    <div>Đảm bảo phần mô tả sản phẩm giải thích chi tiết về sản phẩm của bạn để người dùng dễ hiểu và dễ tìm thấy sản phẩm của bạn.</div>
+                                                        <div class="mt-2">Bạn không nên nhập thông tin về số điện thoại di động, e-mail, v.v. vào phần mô tả sản phẩm để bảo vệ dữ liệu cá nhân của mình.</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="w-full mt-3 xl:mt-0 flex-1">
                                 
                                                 <input id="product-name" type="text" class="form-control" placeholder="Product Description" name = "description">
-                                                <div class="form-help text-right">Maximum character 0/2000</div>
+                                                <div class="form-help text-right">tối đa 0/2000 kí tự</div>
                                             </div>
                                         </div>
                                     </div>
@@ -167,16 +169,16 @@ require_once '../config/dbConnect.php';
                             </div>
                             <div class="intro-y box p-5 mt-5">
                                 <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
-                                    <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> Product Management </div>
+                                    <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> QUẢN LÍ SẢN PHẨM </div>
                                     <div class="mt-5">
                                         <div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
                                             <div class="form-label xl:w-64 xl:!mr-10">
                                                 <div class="text-left">
                                                     <div class="flex items-center">
-                                                        <div class="font-medium">Product Status</div>
-                                                        <div class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">Required</div>
+                                                        <div class="font-medium">Trạng thái</div>
+                                 
                                                     </div>
-                                                    <div class="leading-relaxed text-slate-500 text-xs mt-3"> If the status is active, your product can be searched for by potential buyers. </div>
+                                                    <div class="leading-relaxed text-slate-500 text-xs mt-3"> Nếu trạng thái đang hoạt động, sản phẩm của bạn có thể được tìm kiếm bởi những người mua tiềm năng.</div>
                                                 </div>
                                             </div>
                                             <div class="w-full mt-3 xl:mt-0 flex-1">
