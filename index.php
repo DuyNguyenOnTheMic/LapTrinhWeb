@@ -181,7 +181,7 @@ $result = $stmt->get_result();
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="ltn__product-item text-center">
                             <div class="product-img">
-                                <a href="product-details.html"><img src="<?php echo $proImg; ?>" alt="image"></a>
+                                <a href="product-details.html"><img src="<?php echo $proImg; ?>" height="200" alt="image"></a>
                                 <div class="product-badge">
                                     <ul>
                                         <li class="badge-1">Hot</li>
