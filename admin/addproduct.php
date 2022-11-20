@@ -51,11 +51,11 @@ if (isset($_POST['submit'])) {
                                     <div class="preview">
                                         <div>
                                             <label for="regular-form-1" class="form-label">Name: </label>
-                                            <input id="regular-form-1" type="text" class="form-control" placeholder="Name">
+                                            <input id="regular-form-1" type="text" class="form-control" placeholder="Name" id="name" name="name">
                                         </div>
                                         <div class="mt-3">
                                             <label for="regular-form-2" class="form-label">Price: </label>
-                                            <input id="regular-form-2" type="text" class="form-control" placeholder="Price">
+                                            <input id="regular-form-2" type="text" class="form-control" placeholder="Price" id="price" name="price">
                                         </div>
                                         <div class="mt-3">
                                             <label>Description</label>
@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
                                         </div>
                                         <div class="text-right mt-5">
                                             <button type="button" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
-                                            <button type="button" class="btn btn-primary w-24">Save</button>
+                                            <button type="submit" class="btn btn-primary w-24">Save</button>
                                         </div>
                                     </div>
                                 </div>
