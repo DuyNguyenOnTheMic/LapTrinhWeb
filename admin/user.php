@@ -85,7 +85,7 @@ $result = $stmt->get_result();
                     </div>
                     <div class="px-5 pb-8 text-center">
                         <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
-                        <button type="button" class="btn btn-danger w-24">Delete</button>
+                        <button type="button" class="btn btn-danger w-24" id="btn-confirm_user">Delete</button>
                     </div>
                 </div>
             </div>
