@@ -25,7 +25,7 @@ if ($_POST) {
 
     $sql = "UPDATE `products` SET `name`='$name',`price`='$price',`description`='$description',`image`='$image' WHERE `id` = '$id'";
 
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($db, $sql);
 
     if ($result == true) {
         header("Location:index.php");
