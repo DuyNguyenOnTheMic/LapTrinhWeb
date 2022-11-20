@@ -211,7 +211,7 @@ $result = $stmt->get_result();
                             <div class="product-info">
                                 <h2 class="product-title"><a href="product-details.html"><?php echo $row["name"]; ?></a></h2>
                                 <div class="product-price">
-                                    <span><?php echo CURRENCY_SYMBOL . $row["price"] . ' ' . CURRENCY; ?></span>
+                                    <span><?php echo  number_format($row["price"]) . ' ' . CURRENCY; ?></span>
                                 </div>
                             </div>
                         </div>
