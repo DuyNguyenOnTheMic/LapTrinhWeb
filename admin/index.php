@@ -27,13 +27,13 @@ $sql = "SELECT * FROM products";
             <table class="table table-report -mt-2">
                 <thead>
                     <tr>
-                        <th class="whitespace-nowrap">Hình Ảnh</th>
-                        <th class="whitespace-nowrap">Tên sản phẩm</th>
-                        <th class="text-center whitespace-nowrap">Mô tả sản phẩm</th>
-                        <th class="text-center whitespace-nowrap">Giá sản phẩm</th>
-                        <th class="text-center whitespace-nowrap">Ngày tạo sản phẩm</th>
-                        <th class="text-center whitespace-nowrap">Trạng thái</th>
-                        <th class="text-center whitespace-nowrap">Hành động</th>
+                        <th class="whitespace-nowrap">Image</th>
+                        <th class="whitespace-nowrap">Name</th>
+                        <th class="text-center whitespace-nowrap">Description</th>
+                        <th class="text-center whitespace-nowrap">Price</th>
+                        <th class="text-center whitespace-nowrap">Date created</th>
+                        <th class="text-center whitespace-nowrap">State</th>
+                        <th class="text-center whitespace-nowrap">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
