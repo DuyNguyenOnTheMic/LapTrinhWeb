@@ -58,7 +58,7 @@ $sql = "SELECT * FROM products";
             <td class="table-report__action w-56">
                 <div class="flex justify-center items-center">
                     <a class="flex items-center mr-3" href="updateproduct.php?id=<?= $row['id']?>"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                    <a class="flex items-center text-danger" href="deleteproduct.php?id=<?= $row['id']?>" data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                    <a class="flex items-center text-danger btn-delete" href="javascript:;" data-id="<?= $row['id']?>" data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                 </div>
             </td>
         </tr>
@@ -115,7 +115,7 @@ $sql = "SELECT * FROM products";
                     </div>
                     <div class="px-5 pb-8 text-center">
                         <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
-                        <button type="button" class="btn btn-danger w-24">Delete</button>
+                        <button type="button" class="btn btn-danger w-24" id="btn-confirm">Delete</button>
                     </div>
                 </div>
             </div>

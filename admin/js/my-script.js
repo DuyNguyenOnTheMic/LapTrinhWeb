@@ -27,3 +27,17 @@ var loadFile = function (event) {
     var image = document.getElementById('imgOutput');
     image.src = URL.createObjectURL(event.target.files[0]);
 };
+
+$('.btn-delete').on('click', function(e) {
+    // Show modal and append delete link to button
+    var id = $(this).data("id");
+    $("#btn-confirm").click(function() {
+        window.location.href = 'deleteProduct.php?id=' + id;
+    });
+});
+
+// Close modal on button click
+$('.btnHuy').on('click', function(e) {
+    e.preventDefault();
+    $('#exampleModalCenter').modal('toggle');
+});
