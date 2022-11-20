@@ -3,21 +3,25 @@
     
     class User {
         public $userId;
-        public $userName;
+        public $first_name;
+        public $last_name;
         public $email;
         public $password;
 
-        public function __construct($u_name, $u_email, $u_pass) {
-            $this->userName = $u_name;
-            $this->email = $u_email;
-            $this->password = $u_pass;
+        public function __construct($first_name, $last_name, $email, $password) {
+            $this->first_name = $first_name;
+            $this->last_name = $last_name;
+            $this->email = $email;
+            $this->password = $password;
         }
 
         public function Save() {
             $db = new Db();
-            $sql = "INSERT INTO `user`(`username`, `email`, `password`) VALUES ('".mysqli_real_escape_string($db->Connect(),
-            $this->userName)."','".mysqli_real_escape_string($db->Connect(),
-            $this->email)."','".md5(mysqli_real_escape_string($db->Connect(), $this->password))."')";
+            $sql = "INSERT INTO `users`(`first_name`, `last_name`,`email`, `password`) 
+            VALUES ('".mysqli_real_escape_string($db->Connect(),$this->first_name)."',
+            '".mysqli_real_escape_string($db->Connect(),$this->last_name)."',
+            '".mysqli_real_escape_string($db->Connect(),$this->email)."',
+            '".md5(mysqli_real_escape_string($db->Connect(), $this->password))."')";
             $result = $db->QueryExecute($sql);
             return $result;
         }

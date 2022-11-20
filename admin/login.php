@@ -14,7 +14,7 @@ if (isset($_POST['btn-login'])) {
     $u_name = $_POST['txtLoginName'];
     $u_email = null;
     $u_pass = $_POST['txtLoginPass'];
-    $account = new User($u_name, $u_email, $u_pass);
+    $account = new  User($first_name, $last_name, $email, $password);
     $result = $account->checkLogin($u_name, $u_pass);
     if (mysqli_num_rows($result) <= 0) {
         $message = "Wrong email or password!";
