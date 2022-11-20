@@ -13,7 +13,7 @@ $sql = "SELECT * FROM products";
     </h2>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
-            <button class="btn btn-primary shadow-md mr-2"> <a href="addproduct.php">Add product</a> </button>
+            <button class="btn btn-primary shadow-md mr-2"> <a href="addProduct.php">Add product</a> </button>
 
             <div class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0">
                 <div class="w-56 relative text-slate-500">
@@ -45,7 +45,7 @@ $sql = "SELECT * FROM products";
              <td class="w-40">
                 <div class="flex">
                      <div class="w-10 h-10 image-fit zoom-in">
-                        <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" title="Uploaded at 12 September 2020" src='./images/<?= $row["imgURL"] ?>'>
+                        <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" title="Uploaded at 12 September 2020" src='./images/<?= $row["image"] ?>'>
                      </div>
                 </div>
              </td>
