@@ -293,7 +293,7 @@ $cart = new Cart;
                                 </div>
                                 <div class="mini-cart-info">
                                     <h6><a href="#"><?php echo $item["name"]; ?></a></h6>
-                                    <span class="mini-cart-quantity"><?php echo $item["qty"]; ?> x <?php echo CURRENCY_SYMBOL . $item["subtotal"] . ' ' . CURRENCY; ?></span>
+                                    <span class="mini-cart-quantity"><?php echo $item["qty"]; ?> x <?php echo number_format( $item["subtotal"] ). ' ' . CURRENCY; ?></span>
                                 </div>
                             </div>
                         <?php }
@@ -303,7 +303,7 @@ $cart = new Cart;
                 </div>
                 <div class="mini-cart-footer">
                     <div class="mini-cart-sub-total">
-                        <h5>Subtotal: <span><?php echo CURRENCY_SYMBOL . $cart->total() . ' ' . CURRENCY; ?></span></h5>
+                        <h5>Subtotal: <span><?php echo number_format( $cart->total()) . ' ' . CURRENCY; ?></span></h5>
                     </div>
                     <div class="btn-wrapper">
                         <a href="cart.php" class="theme-btn-1 btn btn-effect-1">View Cart</a>

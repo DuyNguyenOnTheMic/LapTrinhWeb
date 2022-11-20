@@ -62,11 +62,11 @@ $cart = new Cart;
                                             <td width="100px" class="cart-product-info">
                                                 <h4><a href="product-details.html"><?php echo $item["name"]; ?></a></h4>
                                             </td>
-                                            <td width="100px" class="cart-product-price"><?php echo CURRENCY_SYMBOL . $item["price"] . ' ' . CURRENCY; ?></td>
+                                            <td width="100px" class="cart-product-price"><?php echo number_format( $item["price"]) . ' ' . CURRENCY; ?></td>
                                             <td width="150px" class="cart-product-quantity">
                                                 <input class="form-control text-center mb-0 p-0" name="quantity" type="text" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" />
                                             </td>
-                                            <td width="100px" class="cart-product-subtotal"><?php echo CURRENCY_SYMBOL . $item["subtotal"] . ' ' . CURRENCY; ?></td>
+                                            <td width="100px" class="cart-product-subtotal"><?php echo number_format( $item["subtotal"]) . ' ' . CURRENCY; ?></td>
                                         </tr>
                                     <?php }
                                 } else { ?>
@@ -81,7 +81,7 @@ $cart = new Cart;
                                         <td></td>
                                         <td></td>
                                         <td><strong>Cart Total</strong></td>
-                                        <td><strong><?php echo CURRENCY_SYMBOL . $cart->total() . ' ' . CURRENCY; ?></strong></td>
+                                        <td><strong><?php echo number_format( $cart->total() ). ' ' . CURRENCY; ?></strong></td>
                                         <td></td>
                                     </tr>
                                 <?php } ?>
@@ -105,15 +105,15 @@ $cart = new Cart;
                             <tbody>
                                 <tr>
                                     <td>Cart Subtotal</td>
-                                    <td><?php echo CURRENCY_SYMBOL . $cart->total() . ' ' . CURRENCY; ?></strong></td>
+                                    <td><?php echo number_format( $cart->total() ). ' ' . CURRENCY; ?></strong></td>
                                 </tr>
                                 <tr>
                                     <td>Vat</td>
-                                    <td>$00.00</td>
+                                    <td>0 VND</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Order Total</strong></td>
-                                    <td><strong><?php echo CURRENCY_SYMBOL . $cart->total() . ' ' . CURRENCY; ?></strong></strong></td>
+                                    <td><strong><?php echo number_format( $cart->total()) . ' ' . CURRENCY; ?></strong></strong></td>
                                 </tr>
                             </tbody>
                         </table>

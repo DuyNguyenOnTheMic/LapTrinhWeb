@@ -129,13 +129,13 @@ if (!empty($sessData['status']['msg'])) {
                             ?>
                                     <tr>
                                         <td><?php echo $item["name"]; ?> <strong>× <?php echo $item["qty"]; ?></strong></td>
-                                        <td><?php echo CURRENCY_SYMBOL . $item["price"]; ?></td>
+                                        <td><?php echo number_format( $item["price"]); ?></td>
                                     </tr>
                             <?php }
                             } ?>
                             <tr>
                                 <td><strong>Order Total (VND)</strong></td>
-                                <td><strong><?php echo CURRENCY_SYMBOL . $item["subtotal"]; ?></strong></td>
+                                <td><strong><?php echo number_format( $item["subtotal"]); ?></strong></td>
                             </tr>
                         </tbody>
                     </table>
