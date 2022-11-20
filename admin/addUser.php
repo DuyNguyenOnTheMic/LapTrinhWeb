@@ -41,12 +41,12 @@ if ($_POST) {
                         <div class="mt-5">
                             <div id="input" class="p-5">
                                 <div class="preview">
-                                    <div >
-                                        <label for="regular-form-1" class="form-label">First name </label>
+                                    <div class="mt-3">
+                                        <label for="regular-form-1" class="form-label">First name: </label>
                                         <input id="regular-form-1" type="text" class="form-control" placeholder="First name" id="first_name" name="first_name" required>
                                     </div>
-                                    <div>
-                                        <label for="regular-form-2" class="form-label">Last name </label>
+                                    <div class="mt-3">
+                                        <label for="regular-form-2" class="form-label">Last name: </label>
                                         <input id="regular-form-2" type="text" class="form-control" placeholder="Last name" id="last_name" name="last_name" required>
                                     </div>
                                     <div class="mt-3">
