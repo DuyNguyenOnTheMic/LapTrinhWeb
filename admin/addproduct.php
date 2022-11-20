@@ -16,8 +16,7 @@ if (isset($_POST['submit'])) {
     if (isset($name) && isset($price) && isset($description) && isset($image)) {
         move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
 
-        $sqlQ = "INSERT INTO products(image, name, description, price, created) 
-            VALUES  (?,?,?,?,NOW())";
+        $sqlQ = "INSERT INTO products(`image`, `name`, `description`, `price`, `created`) VALUES  (?,?,?,?,NOW())";
         $stmt = $db->prepare($sqlQ);
         $stmt->bind_param("ssss", $db_image, $db_name, $db_des, $db_price);
         $db_image = $image;
