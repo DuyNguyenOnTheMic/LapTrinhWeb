@@ -38,20 +38,15 @@ if (isset($_POST['submit'])) {
 ?>
 
 <div class="content">
-    <div class="intro-y flex items-center mt-8">
-        <h2 class="text-lg font-medium mr-auto">
-            Thêm Sản Phẩm
-        </h2>
-    </div>
     <form action="" method="post" enctype="multipart/form-data">
-        <div class="grid grid-cols-11 gap-x-6 mt-5 pb-20">
+        <div class="grid gap-x-6 mt-5 pb-20">
             <div class="intro-y col-span-11 2xl:col-span-9">
                 <!-- BEGIN: Upload Product -->
                 <div class="intro-y box p-5">
                     <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
-                        <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> TẢI SẢN PHẨM </div>
+                        <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> THÊM SẢN PHẨM </div>
                         <div class="mt-5">
-                            <div class="form-inline items-start flex-col xl:flex-row mt-10">
+                            <div class="form-inline items-start flex-col xl:flex-row">
                                 <div id="input" class="p-5">
                                     <div class="preview">
                                         <div>
@@ -60,11 +55,15 @@ if (isset($_POST['submit'])) {
                                         </div>
                                         <div class="mt-3">
                                             <label for="regular-form-2" class="form-label">Price: </label>
-                                            <input id="regular-form-2" type="text" class="form-control form-control-rounded" placeholder="Price">
+                                            <input id="regular-form-2" type="text" class="form-control" placeholder="Price">
                                         </div>
                                         <div class="mt-3">
-                                            <label for="regular-form-3" class="form-label">Description: </label>
-                                            <input id="regular-form-3" type="text" class="form-control" placeholder="Description">
+                                            <label>Description</label>
+                                            <div class="mt-2">
+                                                <div class="editor">
+                                                    <p>Content of the editor.</p>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="mt-3">
                                             <label for="regular-form-4" class="form-label">State: </label>
@@ -73,7 +72,10 @@ if (isset($_POST['submit'])) {
                                                 <label class="form-check-label" for="product-status-active">Active</label>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary mt-5">Login</button>
+                                        <div class="text-right mt-5">
+                                            <button type="button" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
+                                            <button type="button" class="btn btn-primary w-24">Save</button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="w-full mt-3 xl:mt-0 flex-1 border-2 border-dashed dark:border-darkmode-400 rounded-md pt-4">
