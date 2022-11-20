@@ -73,7 +73,7 @@ if (isset($_POST['submit'])) {
                                         </div>
                                         <div class="text-right mt-5">
                                             <button type="button" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
-                                            <button type="submit" class="btn btn-primary w-24">Save</button>
+                                            <button type="submit" class="btn btn-primary w-24" id="submit" name="submit">Save</button>
                                         </div>
                                     </div>
                                 </div>
