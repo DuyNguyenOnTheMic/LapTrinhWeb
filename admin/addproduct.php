@@ -43,11 +43,11 @@ if ($_POST) {
                                     <div class="preview">
                                         <div>
                                             <label for="regular-form-1" class="form-label">Name: </label>
-                                            <input id="regular-form-1" type="text" class="form-control" placeholder="Name" id="name" name="name">
+                                            <input id="regular-form-1" type="text" class="form-control" placeholder="Name" id="name" name="name" required>
                                         </div>
                                         <div class="mt-3">
                                             <label for="regular-form-2" class="form-label">Price: </label>
-                                            <input id="regular-form-2" type="text" class="form-control" placeholder="Price" id="price" name="price">
+                                            <input id="regular-form-2" type="text" class="form-control" placeholder="Price" id="price" name="price" required>
                                         </div>
                                         <div class="mt-3">
                                             <label class="form-label">Description: </label>
@@ -57,13 +57,6 @@ if ($_POST) {
                                                 </div>
                                             </div>
                                             <input type="hidden" id="description" name="description">
-                                        </div>
-                                        <div class="mt-3">
-                                            <label for="regular-form-4" class="form-label">State: </label>
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="status" name="status">
-                                                <label class="form-check-label" for="product-status-active">Active</label>
-                                            </div>
                                         </div>
                                         <div class="mt-3">
                                             <label class="form-label">Image: </label>
