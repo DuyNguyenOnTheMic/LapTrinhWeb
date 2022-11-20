@@ -1,9 +1,9 @@
-<?php require_once 'includes/header.php'; 
+<?php require_once 'includes/header.php';
 require_once '../config/dbConnect.php';
 
 
 $sql = "SELECT * FROM products";
-    $query = mysqli_query($db, $sql);
+$query = mysqli_query($db, $sql);
 ?>
 
 <!-- BEGIN: Content -->
@@ -38,33 +38,33 @@ $sql = "SELECT * FROM products";
                 </thead>
                 <tbody>
 
-        <?php
-            while($row = mysqli_fetch_array($query)){
-        ?>
-        <tr class="intro-x">
-             <td class="w-40">
-                <div class="flex">
-                     <div class="w-10 h-10 image-fit zoom-in">
-                        <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" title="Uploaded at 12 September 2020" src='./images/<?= $row["image"] ?>'>
-                     </div>
-                </div>
-             </td>
-            <td><a href="" class="font-medium whitespace-nowrap"><?= $row["name"] ?></a></td> 
-            <td class="text-center"><?= $row["description"] ?></td>
-            <td class="text-center"><?= $row["price"] ?> $ &nbsp;</td>
-            <td><?= $row["created"] ?></td>
-            <td class="text-center"><?= $row["status"] ?></td>
-           
-            <td class="table-report__action w-56">
-                <div class="flex justify-center items-center">
-                    <a class="flex items-center mr-3" href="updateproduct.php?id=<?= $row['id']?>"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
-                    <a class="flex items-center text-danger btn-delete" href="javascript:;" data-id="<?= $row['id']?>" data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                </div>
-            </td>
-        </tr>
-        <?php }?>
-                    
-                   
+                    <?php
+                    while ($row = mysqli_fetch_array($query)) {
+                    ?>
+                        <tr class="intro-x">
+                            <td class="w-40">
+                                <div class="flex">
+                                    <div class="w-10 h-10 image-fit zoom-in">
+                                        <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" title="Uploaded at 12 September 2020" src='./images/<?= $row["image"] ?>'>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><a href="" class="font-medium whitespace-nowrap"><?= $row["name"] ?></a></td>
+                            <td class="text-center"><?= $row["description"] ?></td>
+                            <td class="text-center"><?= $row["price"] ?> $ &nbsp;</td>
+                            <td><?= $row["created"] ?></td>
+                            <td class="text-center"><?= $row["status"] ?></td>
+
+                            <td class="table-report__action w-56">
+                                <div class="flex justify-center items-center">
+                                    <a class="flex items-center mr-3" href="updateproduct.php?id=<?= $row['id'] ?>"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
+                                    <a class="flex items-center text-danger btn-delete" href="javascript:;" data-id="<?= $row['id'] ?>" data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
         <!-- END: Data List -->
         <!-- BEGIN: Pagination -->
@@ -78,8 +78,8 @@ $sql = "SELECT * FROM products";
                         <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevron-left"></i> </a>
                     </li>
                     <li class="page-item"> <a class="page-link" href="#">...</a> </li>
-                  <li class="page-item"> <a class="page-link" href="#">1</a> </li>
-                    <li class="page-item active"> <a class="page-link" href="#">2</a> </li>
+                    <li class="page-item active"> <a class="page-link" href="#">1</a> </li>
+                    <li class="page-item"> <a class="page-link" href="#">2</a> </li>
                     <li class="page-item"> <a class="page-link" href="#">3</a> </li>
                     <li class="page-item"> <a class="page-link" href="#">...</a> </li>
                     <li class="page-item">
