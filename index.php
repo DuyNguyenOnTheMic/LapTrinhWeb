@@ -175,7 +175,7 @@ $result = $stmt->get_result();
             <?php
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $proImg = !empty($row["image"]) ? 'img/product/' . $row["image"] : 'images/demo-img.png';
+                    $proImg = !empty($row["image"]) ? 'admin/images/' . $row["image"] : 'images/demo-img.png';
             ?>
                     <!-- ltn__product-item -->
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">

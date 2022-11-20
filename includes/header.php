@@ -284,7 +284,7 @@ $cart = new Cart;
                         // Get cart items from session 
                         $cartItems = $cart->contents();
                         foreach ($cartItems as $item) {
-                            $proImg = !empty($item["image"]) ? 'img/product/' . $item["image"] : 'images/demo-img.png';
+                            $proImg = !empty($item["image"]) ? 'admin/images/' . $item["image"] : 'images/demo-img.png';
                     ?>
                             <div class="mini-cart-item clearfix">
                                 <div class="mini-cart-img">

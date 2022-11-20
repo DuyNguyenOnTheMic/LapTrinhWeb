@@ -52,7 +52,7 @@ $cart = new Cart;
                                     // Get cart items from session 
                                     $cartItems = $cart->contents();
                                     foreach ($cartItems as $item) {
-                                        $proImg = !empty($item["image"]) ? 'img/product/' . $item["image"] : 'images/demo-img.png';
+                                        $proImg = !empty($item["image"]) ? 'admin/images/' . $item["image"] : 'images/demo-img.png';
                                 ?>
                                         <tr width="450px">
                                             <td width="50px" class="cart-product-remove" data-id="<?php echo $item["rowid"]?>" title="Remove Item">x</td>
