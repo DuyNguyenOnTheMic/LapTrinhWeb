@@ -1,7 +1,7 @@
 <?php
 require_once 'includes/header.php';
-
 require_once '../config/dbConnect.php';
+
 if ($_POST) {
     $name = $_POST['name'];
     $price = $_POST['price'];
