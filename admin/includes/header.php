@@ -18,6 +18,7 @@ require_once '../includes/compress.php';
     <title>Invoice Layout - Midone - Tailwind HTML Admin Template</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- END: CSS Assets-->
 </head>
 <!-- END: Head -->
