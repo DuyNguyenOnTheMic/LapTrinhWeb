@@ -30,14 +30,14 @@ if ($_POST) {
 ?>
 
 <div class="content">
-    <form id="add-product-form" method="POST" enctype="multipart/form-data">
-        <div class="grid gap-x-6 mt-5">
-            <div class="intro-y col-span-11 2xl:col-span-9">
-                <!-- BEGIN: Upload Product -->
-                <div class="intro-y box p-5">
-                    <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
-                        <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> THÊM SẢN PHẨM </div>
-                        <div class="mt-5">
+    <div class="grid gap-x-6 mt-5">
+        <div class="intro-y col-span-11 2xl:col-span-9">
+            <!-- BEGIN: Upload Product -->
+            <div class="intro-y box p-5">
+                <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
+                    <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> THÊM SẢN PHẨM </div>
+                    <div class="mt-5">
+                        <form id="add-product-form" method="POST" enctype="multipart/form-data">
                             <div id="input" class="p-5">
                                 <div class="preview">
                                     <div>
@@ -75,13 +75,13 @@ if ($_POST) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-                <!-- END: Upload Product -->
             </div>
-    </form>
-</div>
-<!-- END: Content -->
+            <!-- END: Upload Product -->
+        </div>
+    </div>
+    <!-- END: Content -->
 
-<?php require_once 'includes/footer.php'; ?>
+    <?php require_once 'includes/footer.php'; ?>

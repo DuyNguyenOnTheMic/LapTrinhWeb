@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'includes/header.php';
 require_once '../config/dbConnect.php';
 
@@ -36,23 +36,23 @@ if ($_POST) {
 ?>
 
 <div class="content">
-    <form id="add-product-form" method="POST" enctype="multipart/form-data">
-        <div class="grid gap-x-6 mt-5">
-            <div class="intro-y col-span-11 2xl:col-span-9">
-                <!-- BEGIN: Upload Product -->
-                <div class="intro-y box p-5">
-                    <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
-                        <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> THÊM SẢN PHẨM </div>
-                        <div class="mt-5">
+    <div class="grid gap-x-6 mt-5">
+        <div class="intro-y col-span-11 2xl:col-span-9">
+            <!-- BEGIN: Upload Product -->
+            <div class="intro-y box p-5">
+                <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
+                    <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> THÊM SẢN PHẨM </div>
+                    <div class="mt-5">
+                        <form id="update-product-form" method="POST" enctype="multipart/form-data">
                             <div id="input" class="p-5">
                                 <div class="preview">
                                     <div>
                                         <label for="regular-form-1" class="form-label">Name: </label>
-                                        <input id="regular-form-1" type="text" class="form-control" placeholder="Name" id="name" name="name"  value="<?= $row["name"]; ?>" required>
+                                        <input id="regular-form-1" type="text" class="form-control" placeholder="Name" id="name" name="name" value="<?= $row["name"]; ?>" required>
                                     </div>
                                     <div class="mt-3">
                                         <label for="regular-form-2" class="form-label">Price: </label>
-                                        <input id="regular-form-2" type="text" class="form-control" placeholder="Price" id="price" name="price"  value="<?= $row["price"]; ?>" required>
+                                        <input id="regular-form-2" type="text" class="form-control" placeholder="Price" id="price" name="price" value="<?= $row["price"]; ?>" required>
                                     </div>
                                     <div class="mt-3">
                                         <label class="form-label">Description: </label>
@@ -81,13 +81,13 @@ if ($_POST) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-                <!-- END: Upload Product -->
             </div>
-    </form>
-</div>
-<!-- END: Content -->
+            <!-- END: Upload Product -->
+        </div>
+    </div>
+    <!-- END: Content -->
 
-<?php require_once 'includes/footer.php'; ?>
+    <?php require_once 'includes/footer.php'; ?>
