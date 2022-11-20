@@ -37,7 +37,6 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-
 <div class="content">
     <div class="intro-y flex items-center mt-8">
         <h2 class="text-lg font-medium mr-auto">
@@ -47,22 +46,34 @@ if (isset($_POST['submit'])) {
     <form action="" method="post" enctype="multipart/form-data">
         <div class="grid grid-cols-11 gap-x-6 mt-5 pb-20">
             <div class="intro-y col-span-11 2xl:col-span-9">
-                <!-- BEGIN: Uplaod Product -->
+                <!-- BEGIN: Upload Product -->
                 <div class="intro-y box p-5">
                     <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
                         <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> TẢI SẢN PHẨM </div>
                         <div class="mt-5">
                             <div class="form-inline items-start flex-col xl:flex-row mt-10">
-                                <div class="form-label w-full xl:w-64 xl:!mr-10">
-                                    <div class="text-left">
-                                        <div class="flex items-center">
-                                            <div class="font-medium">Hình ảnh sản phẩm</div>
-
+                                <div id="input" class="p-5">
+                                    <div class="preview">
+                                        <div>
+                                            <label for="regular-form-1" class="form-label">Name: </label>
+                                            <input id="regular-form-1" type="text" class="form-control" placeholder="Name">
                                         </div>
-                                        <div class="leading-relaxed text-slate-500 text-xs mt-3">
-                                            <div>Định dạng hình ảnh là .jpg .jpeg .png và kích thước tối thiểu là 300 x 300 pixel (Để hình ảnh tối ưu sử dụng kích thước tối thiểu là 600 x 780 pixel).</div>
-                                            <div class="mt-2">Chọn ảnh sản phẩm hoặc kéo thả tối đa 5 ảnh cùng lúc vào đây. Bao gồm tối thiểu. 3 ảnh hấp dẫn để sản phẩm thu hút người mua hơn.</div>
+                                        <div class="mt-3">
+                                            <label for="regular-form-2" class="form-label">Price: </label>
+                                            <input id="regular-form-2" type="text" class="form-control form-control-rounded" placeholder="Price">
                                         </div>
+                                        <div class="mt-3">
+                                            <label for="regular-form-3" class="form-label">Description: </label>
+                                            <input id="regular-form-3" type="text" class="form-control" placeholder="Description">
+                                        </div>
+                                        <div class="mt-3">
+                                            <label for="regular-form-4" class="form-label">State: </label>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="status" name="status">
+                                                <label class="form-check-label" for="product-status-active">Active</label>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary mt-5">Login</button>
                                     </div>
                                 </div>
                                 <div class="w-full mt-3 xl:mt-0 flex-1 border-2 border-dashed dark:border-darkmode-400 rounded-md pt-4">
@@ -81,35 +92,11 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
                 </div>
-                <!-- END: Uplaod Product -->
+                <!-- END: Upload Product -->
                 <!-- BEGIN: Product Information -->
                 <div class="intro-y box p-5 mt-5">
                     <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
                         <div class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5"> <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i> THÔNG TIN SẢN PHẨM </div>
-                        <div id="input" class="p-5">
-                            <div class="preview">
-                                <div>
-                                    <label for="regular-form-1" class="form-label">Name: </label>
-                                    <input id="regular-form-1" type="text" class="form-control" placeholder="Name">
-                                </div>
-                                <div class="mt-3">
-                                    <label for="regular-form-2" class="form-label">Price: </label>
-                                    <input id="regular-form-2" type="text" class="form-control form-control-rounded" placeholder="Price">
-                                </div>
-                                <div class="mt-3">
-                                    <label for="regular-form-3" class="form-label">Description: </label>
-                                    <input id="regular-form-3" type="text" class="form-control" placeholder="Description">
-                                </div>
-                                <div class="mt-3">
-                                    <label for="regular-form-4" class="form-label">State: </label>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="status" name="status">
-                                        <label class="form-check-label" for="product-status-active">Active</label>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary mt-5">Login</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
