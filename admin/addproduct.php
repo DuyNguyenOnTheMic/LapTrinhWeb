@@ -25,9 +25,9 @@ if (isset($_POST['submit'])) {
         $db_price = $price;
         $db_des = $description;
 
-        $insertOrder = $stmt->execute();
+        $insertProduct = $stmt->execute();
 
-        if ($insertOrder) {
+        if ($insertProduct) {
             echo "<script> alert('Thêm Sản Phẩm Thành Công') </script>";
             header("Location:index.php");
         } else {
