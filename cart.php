@@ -54,19 +54,19 @@ $cart = new Cart;
                                     foreach ($cartItems as $item) {
                                         $proImg = !empty($item["image"]) ? 'admin/images/' . $item["image"] : 'images/demo-img.png';
                                 ?>
-                                        <tr width="450px">
-                                            <td width="50px" class="cart-product-remove" data-id="<?php echo $item["rowid"]?>" title="Remove Item">x</td>
-                                            <td width="100px" class="cart-product-image">
+                                        <tr>
+                                            <td class="cart-product-remove" data-id="<?php echo $item["rowid"]?>" title="Remove Item">x</td>
+                                            <td class="cart-product-image">
                                                 <a href="product-details.html"><img src="<?php echo $proImg; ?>" alt="#"></a>
                                             </td>
-                                            <td width="100px" class="cart-product-info">
-                                                <h4><a href="product-details.html"><?php echo $item["name"]; ?></a></h4>
+                                            <td class="cart-product-info">
+                                                <h4 class="text-wrap" style="width: 6rem;"><a href="product-details.html"><?php echo $item["name"]; ?></a></h4>
                                             </td>
-                                            <td width="100px" class="cart-product-price"><?php echo number_format( $item["price"]) . ' ' . CURRENCY; ?></td>
-                                            <td width="150px" class="cart-product-quantity">
-                                                <input class="form-control text-center mb-0 p-0" name="quantity" type="text" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" />
+                                            <td class="cart-product-price"><?php echo number_format( $item["price"]) . ' ' . CURRENCY; ?></td>
+                                            <td class="cart-product-quantity">
+                                                <input style="width: 3rem;" class="form-control text-center mb-0 p-0" name="quantity" type="text" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" />
                                             </td>
-                                            <td width="100px" class="cart-product-subtotal"><?php echo number_format( $item["subtotal"]) . ' ' . CURRENCY; ?></td>
+                                            <td class="cart-product-subtotal"><?php echo number_format( $item["subtotal"]) . ' ' . CURRENCY; ?></td>
                                         </tr>
                                     <?php }
                                 } else { ?>

@@ -50,10 +50,10 @@ $query = mysqli_query($db, $sql);
                                 </div>
                             </td>
                             <td><a href="" class="font-medium whitespace-nowrap"><?= $row["name"] ?></a></td>
-                            <td class="text-center"><?= $row["description"] ?></td>
+                            <td><?= $row["description"] ?></td>
                             <td class="text-center"><?= $row["price"] ?> $ &nbsp;</td>
                             <td><?= $row["created"] ?></td>
-                            <td class="text-center"><?= $row["status"] ?></td>
+                            <td class="text-center text-success">active</td>
 
                             <td class="table-report__action w-56">
                                 <div class="flex justify-center items-center">

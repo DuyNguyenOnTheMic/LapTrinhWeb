@@ -135,7 +135,7 @@ if (!empty($sessData['status']['msg'])) {
                             } ?>
                             <tr>
                                 <td><strong>Order Total (VND)</strong></td>
-                                <td><strong><?php echo number_format( $item["subtotal"]); ?></strong></td>
+                                <td><strong><?php echo number_format( $cart->total() ). ' ' . CURRENCY; ?></strong></td>
                             </tr>
                         </tbody>
                     </table>
