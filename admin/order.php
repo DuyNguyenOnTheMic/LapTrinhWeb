@@ -43,7 +43,7 @@ $result = $stmt->get_result();
                             </div>
                         </td>
                         <td>
-                           <?php echo $row["grand_total"]; ?> VND
+                           <?php echo number_format($row["grand_total"]); ?> VND
                         </td>
                         <td class="text-center"><?php echo $row["first_name"];?>  <?php echo $row["last_name"];?></td>
                         <td class="text-center">

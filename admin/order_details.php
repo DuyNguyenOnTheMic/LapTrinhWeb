@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
                                 <p><b>Reference ID:</b> #<?php echo $orderInfo['id']; ?></p>
                                 </div>
                                 <div class="flex items-center mt-3"> <i data-lucide="credit-card" class="w-4 h-4 text-slate-500 mr-2"></i>
-                                <p><b>Total:</b> <?php echo CURRENCY_SYMBOL . $orderInfo['grand_total'] . ' ' . CURRENCY; ?></p> 
+                                <p><b>Total:</b> <?php echo   number_format($orderInfo['grand_total']) . ' ' . CURRENCY; ?></p> 
                             </div>
                                 <div class="flex items-center mt-3"> <i data-lucide="clock" class="w-4 h-4 text-slate-500 mr-2"></i>                         
                                 <p><b>Placed On:</b> <?php echo $orderInfo['created']; ?></p>
@@ -87,9 +87,9 @@ if ($result->num_rows > 0) {
                                                 <a href="product-details.html"><img src="<?php echo $proImg; ?>" alt="#"></a>
                                             </td>
                                             <td><?php echo $item["name"]; ?></td>
-                                            <td><?php echo CURRENCY_SYMBOL . $price . ' ' . CURRENCY; ?></td>
+                                            <td ><?php echo   number_format($price) . ' ' . CURRENCY; ?></td>
                                             <td><?php echo $quantity; ?></td>
-                                            <td><?php echo CURRENCY_SYMBOL . $sub_total . ' ' . CURRENCY; ?></td>
+                                            <td><?php echo   number_format($sub_total) . ' ' . CURRENCY; ?></td>
                                         </tr>
                                 <?php }
                                 } ?>
