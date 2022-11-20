@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
                                             <input id="regular-form-2" type="text" class="form-control" placeholder="Price" id="price" name="price">
                                         </div>
                                         <div class="mt-3">
-                                            <label>Description</label>
+                                            <label class="form-label">Description: </label>
                                             <div class="mt-2">
                                                 <div class="editor">
                                                     <p>Content of the editor.</p>
