@@ -3,32 +3,29 @@ require_once 'includes/header.php';
 
 require_once '../config/dbConnect.php';
 if (isset($_POST['submit'])) {
-    $tensp = $_POST['name'];
-    $gia = $_POST['price'];
-    $mota = $_POST['description'];
-    $hinhanh = $_FILES['image']['name'];
-
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];
+    $image = $_FILES['image']['name'];
 
     //Lay dia chi da tao
     $target_dir = "./images/";
     //tao duong dan truy cap 
-    $target_file = $target_dir . $hinhanh;
+    $target_file = $target_dir . $image;
     //check cac bien
-    if (isset($tensp) && isset($gia) && isset($mota) && isset($hinhanh)) {
+    if (isset($name) && isset($price) && isset($description) && isset($image)) {
         move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
 
         $sqlQ = "INSERT INTO products(image, name, description, price, created) 
             VALUES  (?,?,?,?,NOW())";
         $stmt = $db->prepare($sqlQ);
         $stmt->bind_param("ssss", $db_image, $db_name, $db_des, $db_price);
-        $db_image = $hinhanh;
-        $db_name = $tensp;
-        $db_price = $gia;
-        $db_des = $mota;
+        $db_image = $image;
+        $db_name = $name;
+        $db_price = $price;
+        $db_des = $description;
 
         $insertOrder = $stmt->execute();
-
-
 
         if ($insertOrder) {
             echo "<script> alert('Thêm Sản Phẩm Thành Công') </script>";
