@@ -43,7 +43,7 @@ $result = $stmt->get_result();
                             </div>
                         </td>
                         <td>
-                            <a href="" class="font-medium whitespace-nowrap"><?php echo $row["grand_total"]; ?></a>
+                           <?php echo $row["grand_total"]; ?> VND
                         </td>
                         <td class="text-center"><?php echo $row["first_name"];?>  <?php echo $row["last_name"];?></td>
                         <td class="text-center">
@@ -54,9 +54,9 @@ $result = $stmt->get_result();
                         </td>
                         <td class="text-center">
                             <?php echo $row["email"]; ?> 
-                        </td>
+                        </td> 
                         <td class="text-center">
-                            <?php echo $row["status"]; ?> 
+                        <span class="text-danger rounded px-2 ml-1"><?php echo $row['status']; ?></span> 
                         </td>
                         <td class="table-report__action w-56">
                             <div class="flex justify-center items-center">

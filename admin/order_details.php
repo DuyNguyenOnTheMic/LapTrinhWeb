@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
                                 <div class="flex items-center mt-3"> <i data-lucide="map-pin" class="w-4 h-4 text-slate-500 mr-2"></i>                         
                                 <p><b>Address:</b> <?php echo $orderInfo['address']; ?></p>
                                 </div>
-                                <div class="flex items-center mt-3"> <i data-lucide="clock" class="w-4 h-4 text-slate-500 mr-2"></i> Transaction Status: <span class="bg-success/20 text-danger rounded px-2 ml-1"><?php echo $orderInfo['status']; ?></span> </div>
+                                <div class="flex items-center mt-3"> <i data-lucide="clock" class="w-4 h-4 text-slate-500 mr-2"></i> Transaction Status: <span class=" text-danger rounded px-2 ml-1"><?php echo $orderInfo['status']; ?></span> </div>
                             </div>
                             
                         </div>
