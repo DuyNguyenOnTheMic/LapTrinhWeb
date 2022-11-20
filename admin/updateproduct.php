@@ -52,13 +52,13 @@ if ($_POST) {
                                     </div>
                                     <div class="mt-3">
                                         <label for="regular-form-2" class="form-label">Price: </label>
-                                        <input id="regular-form-2" type="text" class="form-control" placeholder="Price" id="price" name="price" value="<?= $row["price"]; ?>" required>
+                                        <input id="regular-form-2" type="number" class="form-control" placeholder="Price" id="price" name="price" value="<?= $row["price"]; ?>" required>
                                     </div>
                                     <div class="mt-3">
                                         <label class="form-label">Description: </label>
                                         <div class="mt-2">
                                             <div class="editor">
-                                                <p>Content of the editor.</p>
+                                                <p><?= $row["description"]; ?></p>
                                             </div>
                                         </div>
                                         <input type="hidden" id="description" name="description">

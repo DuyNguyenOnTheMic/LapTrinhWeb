@@ -46,7 +46,7 @@ if ($_POST) {
                                     </div>
                                     <div class="mt-3">
                                         <label for="regular-form-2" class="form-label">Price: </label>
-                                        <input id="regular-form-2" type="text" class="form-control" placeholder="Price" id="price" name="price" required>
+                                        <input id="regular-form-2" type="number" class="form-control" placeholder="Price" id="price" name="price" required>
                                     </div>
                                     <div class="mt-3">
                                         <label class="form-label">Description: </label>
