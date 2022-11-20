@@ -1,11 +1,8 @@
 <?php
 
 $order_id =(int) $_GET['id'];
-// include header
-require_once 'includes/header.php';
+require_once 'includes/header.php'; 
 require_once '../includes/compress.php';
-
-// Include the database connection file 
 require_once '../config/dbConnect.php';
 // Fetch order details from the database 
 $sqlQ = "SELECT * FROM orders WHERE id=?";
@@ -19,44 +16,46 @@ if ($result->num_rows > 0) {
     $orderInfo = $result->fetch_assoc();
 } 
 ?>
-<!-- BREADCRUMB AREA START -->
-<div class="ltn__breadcrumb-area ltn__breadcrumb-area-4 ltn__breadcrumb-color-white---">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="ltn__breadcrumb-inner text-center">
-                    <h1 class="ltn__page-title">Order status</h1>
-                    <div class="ltn__breadcrumb-list">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li>Order status</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- BREADCRUMB AREA END -->
-<div class="liton__shoping-cart-area mb-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">                           
-                    <!-- Order status & shipping info -->
-                    <div class="row col-lg-12 ord-addr-info">
-                        <div class="hdr">Order Info</div>
-                        <p><b>Reference ID:</b> #<?php echo $orderInfo['id']; ?></p>
-                        <p><b>Total:</b> <?php echo CURRENCY_SYMBOL . $orderInfo['grand_total'] . ' ' . CURRENCY; ?></p>
-                        <p><b>Placed On:</b> <?php echo $orderInfo['created']; ?></p>
-                        <p><b>Buyer Name:</b> <?php echo $orderInfo['first_name'] . ' ' . $orderInfo['last_name']; ?></p>
-                        <p><b>Email:</b> <?php echo $orderInfo['email']; ?></p>
-                        <p><b>Phone:</b> <?php echo $orderInfo['phone']; ?></p>
-                        <p><b>Address:</b> <?php echo $orderInfo['address']; ?></p>
-                    </div>
-
-                    <!-- Order items -->
-                    <div class="row col-lg-12">
-                        <table class="table table-hover cart">
+<div class="content">
+    <h2 class="intro-y text-lg font-medium mt-10">
+        Order Details
+    </h2>
+    <!-- BEGIN: Transaction Details -->
+    <div class="intro-y grid grid-cols-11 gap-5 mt-5">
+                        <div class="col-span-12 lg:col-span-4 2xl:col-span-3">
+                            <div class="box p-5 rounded-md">
+                                <div class="flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5 mb-5">
+                                    <div class="font-medium text-base truncate">Order Info</div>
+                                </div>
+                                <div class="flex items-center"> <i data-lucide="clipboard" class="w-4 h-4 text-slate-500 mr-2"></i>                         
+                                <p><b>Reference ID:</b> #<?php echo $orderInfo['id']; ?></p>
+                                </div>
+                                <div class="flex items-center mt-3"> <i data-lucide="credit-card" class="w-4 h-4 text-slate-500 mr-2"></i>
+                                <p><b>Total:</b> <?php echo CURRENCY_SYMBOL . $orderInfo['grand_total'] . ' ' . CURRENCY; ?></p> 
+                            </div>
+                                <div class="flex items-center mt-3"> <i data-lucide="clock" class="w-4 h-4 text-slate-500 mr-2"></i>                         
+                                <p><b>Placed On:</b> <?php echo $orderInfo['created']; ?></p>
+                                </div>
+                                <div class="flex items-center mt-3"> <i data-lucide="user" class="w-4 h-4 text-slate-500 mr-2"></i>                         
+                                <p><b>Buyer Name:</b> <?php echo $orderInfo['first_name'] . ' ' . $orderInfo['last_name']; ?></p>
+                                </div>
+                                <div class="flex items-center mt-3"> <i data-lucide="mail" class="w-4 h-4 text-slate-500 mr-2"></i>                         
+                                <p><b>Email:</b> <?php echo $orderInfo['email']; ?></p>
+                                </div>
+                                <div class="flex items-center mt-3"> <i data-lucide="map-pin" class="w-4 h-4 text-slate-500 mr-2"></i>                         
+                                <p><b>Address:</b> <?php echo $orderInfo['address']; ?></p>
+                                </div>
+                                <div class="flex items-center mt-3"> <i data-lucide="clock" class="w-4 h-4 text-slate-500 mr-2"></i> Transaction Status: <span class="bg-success/20 text-danger rounded px-2 ml-1"><?php echo $orderInfo['status']; ?></span> </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-span-12 lg:col-span-7 2xl:col-span-8">
+                            <div class="box p-5 rounded-md">
+                                <div class="flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5 mb-5">
+                                    <div class="font-medium text-base truncate">Order Details</div>
+                                </div>
+                                <div class="overflow-auto lg:overflow-visible -mt-3">
+                                <table class="table table-report -mt-2">
                             <thead>
                                 <tr>
                                     <th width="10%"></th>
@@ -81,7 +80,7 @@ if ($result->num_rows > 0) {
                                         $price = $item["price"];
                                         $quantity = $item["quantity"];
                                         $sub_total = ($price * $quantity);
-                                        $proImg = !empty($item["image"]) ? 'img/product/' . $item["image"] : 'images/demo-img.png';
+                                        $proImg = !empty($item["image"]) ? '../img/product/' . $item["image"] : '../images/demo-img.png';
                                 ?>
                                         <tr>
                                             <td class="cart-product-image">
@@ -96,18 +95,11 @@ if ($result->num_rows > 0) {
                                 } ?>
                             </tbody>
                         </table>
-                    </div>
-
-                    <div class="col mb-2">
-                        <div class="row">
-                            <div class="col-sm-12  col-md-6">
-                                <a href="index.php" class="theme-btn-1 btn btn-effect-1"><i class="ialeft"></i>Continue Shopping</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-               
-            </div>
+                    <!-- END: Transaction Details -->
 
-        </div>
-    </div>
 </div>
+<?php require_once 'includes/footer.php'; ?>
