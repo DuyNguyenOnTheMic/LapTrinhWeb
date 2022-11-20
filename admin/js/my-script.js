@@ -37,6 +37,9 @@ $('.btn-delete').on('click', function(e) {
     $("#btn-confirm_user").click(function() {
         window.location.href = 'deleteUser.php?id=' + id;
     });
+    $("#btn-confirm_order").click(function() {
+        window.location.href = 'deleteOrder.php?id=' + id;
+    });
 });
 
 // Close modal on button click
