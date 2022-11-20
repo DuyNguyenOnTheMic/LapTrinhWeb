@@ -5,10 +5,6 @@ $('#add-product-form').submit(function (e) {
     var description = $('.ck-content').text();
     $('#description').val(description);
 
-    // Get form data
-    var $form = $(this);
-    var serializedData = $form.serialize();
-
     var data = new FormData(this); // <-- 'this' is your form element
 
     $.ajax({
@@ -18,7 +14,9 @@ $('#add-product-form').submit(function (e) {
         cache: false,
         contentType: false,
         processData: false,
-    })
+    }).done(function () {
+        window.location.href = 'index.php';
+    });
 });
 
 var loadFile = function (event) {

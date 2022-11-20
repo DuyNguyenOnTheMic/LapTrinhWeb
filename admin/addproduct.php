@@ -25,13 +25,6 @@ if ($_POST) {
         $db_des = $description;
 
         $insertProduct = $stmt->execute();
-
-        if ($insertProduct) {
-            echo "<script> alert('Thêm Sản Phẩm Thành Công') </script>";
-            header("Location:index.php");
-        } else {
-            echo "fail" . $sqlQ;
-        }
     }
 }
 ?>
