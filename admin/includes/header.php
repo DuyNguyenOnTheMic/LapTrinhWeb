@@ -895,41 +895,18 @@ if (isset($_SESSION['user']) == "") {
                 <ul>
 
                     <li>
-                        <a href="side-menu-light-inbox.html" class="side-menu">
+                        <a href="index.php" class="side-menu">
                             <div class="side-menu__icon"> <i data-lucide="inbox"></i> </div>
-                            <div class="side-menu__title"> Sản phẩm </div>
+                            <div class="side-menu__title"> Products </div>
                         </a>
                     </li>
                     <li>
-                        <a href="side-menu-light-file-manager.html" class="side-menu">
+                        <a href="order.php" class="side-menu">
                             <div class="side-menu__icon"> <i data-lucide="hard-drive"></i> </div>
-                            <div class="side-menu__title"> Đơn hàng </div>
+                            <div class="side-menu__title"> Orders </div>
                         </a>
                     </li>
-                    <li>
-                        <a href="side-menu-light-point-of-sale.html" class="side-menu">
-                            <div class="side-menu__icon"> <i data-lucide="credit-card"></i> </div>
-                            <div class="side-menu__title"> Point of Sale </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="side-menu-light-chat.html" class="side-menu">
-                            <div class="side-menu__icon"> <i data-lucide="message-square"></i> </div>
-                            <div class="side-menu__title"> Chat </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="side-menu-light-post.html" class="side-menu">
-                            <div class="side-menu__icon"> <i data-lucide="file-text"></i> </div>
-                            <div class="side-menu__title"> Post </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="side-menu-light-calendar.html" class="side-menu">
-                            <div class="side-menu__icon"> <i data-lucide="calendar"></i> </div>
-                            <div class="side-menu__title"> Calendar </div>
-                        </a>
-                    </li>
+                    
 
                 </ul>
             </nav>
