@@ -3,7 +3,7 @@ require_once 'includes/header.php';
 require_once '../includes/compress.php';
 
 require_once '../config/dbConnect.php';
-$sqlQ = "SELECT * FROM `orders`";
+$sqlQ = "SELECT * FROM `users`";
 $stmt = $db->prepare($sqlQ);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -12,8 +12,13 @@ $result = $stmt->get_result();
 <!-- BEGIN: Content -->
 <div class="content">
     <h2 class="intro-y text-lg font-medium mt-10">
-        Order List
+        User List
     </h2>
+    <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
+            <button class="btn btn-primary shadow-md mr-2"> <a href="addUser.php">Add User</a> </button>
+
+          
+        </div>
     <div class="grid grid-cols-12 gap-6 mt-5">
 
         <!-- BEGIN: Data List -->
@@ -22,12 +27,8 @@ $result = $stmt->get_result();
                 <thead>
                     <tr>
                         <th class="whitespace-nowrap">ID</th>
-                        <th class="whitespace-nowrap">Grand_total</th>
-                        <th class="text-center whitespace-nowrap">Name</th>
-                        <th class="text-center whitespace-nowrap">Phone</th>
-                        <th class="text-center whitespace-nowrap">Address</th>
+                        <th class=" text-center whitespace-nowrap">Name</th>
                         <th class="text-center whitespace-nowrap">Email</th>
-                        <th class="text-center whitespace-nowrap">STATUS</th>
                         <th class="text-center whitespace-nowrap">ACTIONS</th>
                     </tr>
                 </thead>
@@ -42,27 +43,17 @@ $result = $stmt->get_result();
                                         <?php echo $row["id"]; ?>
                                     </div>
                                 </td>
-                                <td>
-                                    <?php echo number_format($row["grand_total"]); ?> VND
-                                </td>
+                              
                                 <td class="text-center"><?php echo $row["first_name"]; ?> <?php echo $row["last_name"]; ?></td>
-                                <td class="text-center">
-                                    <?php echo $row["phone"]; ?>
-                                </td>
-                                <td class="text-center">
-                                    <?php echo $row["address"]; ?>
-                                </td>
+                                
                                 <td class="text-center">
                                     <?php echo $row["email"]; ?>
                                 </td>
-                                <td class="text-center">
-                                    <span class="text-danger rounded px-2 ml-1"><?php echo $row['status']; ?></span>
-                                </td>
+                              
                                 <td class="table-report__action w-56">
-                                    <div class="flex justify-center items-center">
-                                        <a class="flex items-center mr-3" href="orderDetails.php?id=<?= $row['id'] ?>"> <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Details </a>
-                                        <a class="flex items-center text-danger btn-delete" href="javascript:;" data-id="<?= $row['id'] ?>" data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
-                                    </div>
+                                <div class="flex justify-center items-center">
+                                    <a class="flex items-center text-danger btn-delete" href="javascript:;" data-id="<?= $row['id'] ?>" data-tw-toggle="modal" data-tw-target="#delete-confirmation-modal"> <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
+                                </div>
                                 </td>
                             </tr>
                         <?php }
@@ -93,7 +84,7 @@ $result = $stmt->get_result();
                     </div>
                     <div class="px-5 pb-8 text-center">
                         <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Cancel</button>
-                        <button type="button" class="btn btn-danger w-24" id="btn-confirm_order">Delete</button>
+                        <button type="button" class="btn btn-danger w-24" id="btn-confirm_user">Delete</button>
                     </div>
                 </div>
             </div>
