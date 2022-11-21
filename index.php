@@ -16,7 +16,7 @@ $result = $stmt->get_result();
 <div class="ltn__slider-area ltn__slider-3 ltn__slider-6 section-bg-1">
     <div class="ltn__slide-one-active slick-slide-arrow-1 slick-slide-dots-1 arrow-white---">
         <!-- ltn__slide-item  -->
-        <div class="ltn__slide-item ltn__slide-item-8 text-color-white---- bg-image bg-overlay-theme-black-80---" data-bs-bg="img/slider/1.jpg">
+        <div class="ltn__slide-item ltn__slide-item-8 text-color-white---- bg-image bg-overlay-theme-black-80---" data-bs-bg="img/banner/coverr.jpg" style="background-size: 100% 175%;">
             <div class="ltn__slide-item-inner">
                 <div class="container">
                     <div class="row">
@@ -47,7 +47,7 @@ $result = $stmt->get_result();
             </div>
         </div>
         <!-- ltn__slide-item  -->
-        <div class="ltn__slide-item ltn__slide-item-8 text-color-white---- bg-image bg-overlay-theme-black-80---" data-bs-bg="img/slider/3.jpg">
+        <div class="ltn__slide-item ltn__slide-item-8 text-color-white---- bg-image bg-overlay-theme-black-80---" data-bs-bg="img/banner/coverr.jpg" style="background-size: 100% 175%;">
             <div class="ltn__slide-item-inner">
                 <div class="container">
                     <div class="row">
@@ -138,21 +138,21 @@ $result = $stmt->get_result();
             <div class="col-lg-4 col-md-6">
                 <div class="ltn__banner-item">
                     <div class="ltn__banner-img">
-                        <a href="shop.html"><img src="img/banner/1.jpg" alt="Banner Image"></a>
+                        <a href="shop.html"><img src="admin/images/banner1.gif" alt="Banner Image" width="494" height="250"></a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="ltn__banner-item">
                     <div class="ltn__banner-img">
-                        <a href="shop.html"><img src="img/banner/2.jpg" alt="Banner Image"></a>
+                        <a href="shop.html"><img src="admin/images/banner2.gif" alt="Banner Image"  width="494" height="250"></a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="ltn__banner-item">
                     <div class="ltn__banner-img">
-                        <a href="shop.html"><img src="img/banner/3.jpg" alt="Banner Image"></a>
+                        <a href="shop.html"><img src="admin/images/banner3.gif" alt="Banner Image" width="494" height="250"></a>
                     </div>
                 </div>
             </div>
@@ -232,14 +232,14 @@ $result = $stmt->get_result();
             <div class="col-md-6">
                 <div class="ltn__banner-item">
                     <div class="ltn__banner-img">
-                        <a href="shop.html"><img src="img/banner/6.jpg" alt="Banner Image"></a>
+                        <a href="shop.html"><img src="img/banner/cover2.webp" alt="Banner Image" width="650" height="283"></a>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="ltn__banner-item">
                     <div class="ltn__banner-img">
-                        <a href="shop.html"><img src="img/banner/7.jpg" alt="Banner Image"></a>
+                        <a href="shop.html"><img src="img/banner/banner5.gif" alt="Banner Image" width="650" height="283"></a>
                     </div>
                 </div>
             </div>
