@@ -11,15 +11,14 @@ if (isset($_SESSION['user']) != "") {
 
 $message = "";
 if (isset($_POST['btn-login'])) {
-    $u_name = $_POST['txtLoginName'];
-    $u_email = null;
+    $u_email = $_POST['txtEmail'];
     $u_pass = $_POST['txtLoginPass'];
     $account = new User(null, null, $u_email, $u_pass);
-    $result = $account->checkLogin($u_name, $u_pass);
+    $result = $account->checkLogin($u_email, $u_pass);
     if (mysqli_num_rows($result) <= 0) {
         $message = "Wrong email or password!";
     } else {
-        $_SESSION['user'] = $u_name;
+        $_SESSION['user'] = $u_email;
         header("Location: index.php");
     }
 }
@@ -72,7 +71,7 @@ if (isset($_POST['btn-login'])) {
                     <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">A few more clicks to sign in to your account. Manage all your e-commerce accounts in one place</div>
                     <form method="POST">
                         <div class="intro-x mt-8">
-                            <input type="text" class="intro-x login__input form-control py-3 px-4 block" id="txtLoginName" name="txtLoginName" placeholder="Email">
+                            <input type="text" class="intro-x login__input form-control py-3 px-4 block" id="txtEmail" name="txtEmail" placeholder="Email">
                             <input type="password" class="intro-x login__input form-control py-3 px-4 block mt-4" id="txtLoginPass" name="txtLoginPass" placeholder="Password">
                             <div class="text-danger mt-4"><?php if ($message != "") {
                                                                 echo $message;
