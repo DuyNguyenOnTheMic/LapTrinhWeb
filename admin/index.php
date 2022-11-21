@@ -51,7 +51,7 @@ $query = mysqli_query($db, $sql);
                             </td>
                             <td><a href="" class="font-medium whitespace-nowrap"><?= $row["name"] ?></a></td>
                             <td><?= $row["description"] ?></td>
-                            <td class="text-center"><?= $row["price"] ?> $ &nbsp;</td>
+                            <td class="text-center tex-nowrap" style="width: 16rem;"><?php echo  number_format($row["price"]) . ' ' . CURRENCY; ?></td>
                             <td><?= $row["created"] ?></td>
                             <td class="text-center text-success">active</td>
 
