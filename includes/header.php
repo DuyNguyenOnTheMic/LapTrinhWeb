@@ -46,7 +46,7 @@ $cart = new Cart;
                     <div class="row">
                         <div class="col">
                             <div class="site-logo">
-                                <a href="index.php"><img src="img/brand-logo/app-logo.png" width="100" alt="Logo"></a>
+                                <a href="index.php"><img src="img/brand-logo/app-logo.png" alt="Logo"></a>
                             </div>
                         </div>
                         <div class="col header-contact-serarch-column d-none d-xl-block">
@@ -169,7 +169,7 @@ $cart = new Cart;
                         <div class="col header-menu-column justify-content-center">
                             <div class="sticky-logo">
                                 <div class="site-logo">
-                                    <a href="index.php"><img src="img/logo.png" alt="Logo"></a>
+                                    <a href="index.php"><img class="p-3" src="img/brand-logo/app-logo.png" alt="Logo"></a>
                                 </div>
                             </div>
                             <div class="header-menu header-menu-2">
