@@ -4,9 +4,9 @@ require_once '../config/dbConnect.php';
 require_once '../includes/compress.php';
 
 session_start();
-// if (isset($_SESSION['user']) == "") {
-//     header("Location: login.php");
-// }
+if (isset($_SESSION['user']) == "") {
+    header("Location: login.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -912,7 +912,7 @@ session_start();
                             <div class="side-menu__title"> Users </div>
                         </a>
                     </li>
-                    
+
 
                 </ul>
             </nav>
