@@ -10,7 +10,7 @@ if (isset($_SESSION['user']) == "") {
 
 ?>
 <!DOCTYPE html>
-<html lang="vi" class="light">
+<html lang="en" class="light">
 <!-- BEGIN: Head -->
 
 <head>
@@ -33,7 +33,7 @@ if (isset($_SESSION['user']) == "") {
     <div class="mobile-menu md:hidden">
         <div class="mobile-menu-bar">
             <a href="" class="flex mr-auto">
-                <img alt="Midone - HTML Admin Template" class="w-6" src="images/logo.svg">
+                <img alt="Midone - HTML Admin Template" width="150" src="images/logo-black-nobackground.svg">
             </a>
             <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
         </div>
@@ -675,8 +675,7 @@ if (isset($_SESSION['user']) == "") {
         <div class="h-full flex items-center">
             <!-- BEGIN: Logo -->
             <a href="" class="-intro-x hidden md:flex">
-                <img alt="Midone - HTML Admin Template" class="w-6" src="images/logo.svg">
-                <span class="text-white text-lg ml-3"> Icewall </span>
+                <img alt="Midone - HTML Admin Template" width="200" src="images/logo-black-nobackground.svg">
             </a>
             <!-- END: Logo -->
             <!-- BEGIN: Breadcrumb -->
