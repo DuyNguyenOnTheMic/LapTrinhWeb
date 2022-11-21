@@ -25,10 +25,10 @@ $result = $stmt->get_result();
                                 <div class="slide-item-info-inner ltn__slide-animation">
                                     <div class="slide-item-info">
                                         <div class="slide-item-info-inner ltn__slide-animation">
-                                            <h1 class="slide-title animated ">Fresh Flower</h1>
-                                            <h6 class="slide-sub-title ltn__body-color slide-title-line animated">Natural & Beautiful Flower Here</h6>
+                                            <h1 class="slide-title animated ">Big sale</h1>
+                                            <h6 class="slide-sub-title ltn__body-color slide-title-line animated">Year end big sale is coming... 😍</h6>
                                             <div class="slide-brief animated">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                                <p>Black friday is coming, don't forget to get huge discounts from Laptopnganngo 🥳</p>
                                             </div>
                                             <div class="btn-wrapper animated">
                                                 <a href="service.html" class="theme-btn-1 btn btn-round">Shop Now</a>
