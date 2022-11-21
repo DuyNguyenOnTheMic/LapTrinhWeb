@@ -138,7 +138,7 @@ $cart = new Cart;
                                                     <i class="icon-handbag"></i>
                                                     <sup><?php echo ($cart->total_items() > 0) ? $cart->total_items() . ' Items' : 0; ?></sup>
                                                 </span>
-                                                <h6><span>Your Cart</span> <span class="ltn__secondary-color">$89.25</span></h6>
+                                                <h6><span>Your Cart</span> <span class="ltn__secondary-color"><?php echo number_format( $cart->total() ). ' ' . CURRENCY; ?></span></h6>
                                             </a>
                                         </div>
                                     </li>
