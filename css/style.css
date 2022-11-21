@@ -7699,7 +7699,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
       color: var(--white); }
 
 .bg-image {
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat; }
 
