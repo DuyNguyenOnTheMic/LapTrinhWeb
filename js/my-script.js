@@ -2,9 +2,11 @@ $('.btnAddToCart').on('click', function (e) {
     toastr.options.positionClass = 'toast-bottom-right';
     toastr.success('Thêm thành công!');
     e.preventDefault();
+    // Call action to add product to cart
     $.ajax({
         url: $(this).attr('href'),
     }).done(function (data) {
+        // Reload page after adding product
         location.reload();
     });
 });
@@ -17,6 +19,7 @@ $('.cart-product-remove').on('click', function (e) {
         $.ajax({
             url: 'cartAction.php?action=removeCartItem&id=' + id,
         }).done(function (data) {
+        // Reload page after delete product
             location.reload();
         });
     } else {
