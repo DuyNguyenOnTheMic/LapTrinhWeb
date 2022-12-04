@@ -145,7 +145,7 @@ $result = $stmt->get_result();
             <div class="col-lg-4 col-md-6">
                 <div class="ltn__banner-item">
                     <div class="ltn__banner-img">
-                        <a href="shop.html"><img src="admin/images/banner2.gif" alt="Banner Image"  width="494" height="250"></a>
+                        <a href="shop.html"><img src="admin/images/banner2.gif" alt="Banner Image" width="494" height="250"></a>
                     </div>
                 </div>
             </div>

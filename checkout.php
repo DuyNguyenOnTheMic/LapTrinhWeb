@@ -63,7 +63,7 @@ if (!empty($sessData['status']['msg'])) {
         <div class="row">
             <div class="col-lg-12">
                 <div class="ltn__checkout-inner">
-                  
+
                     <div class="ltn__checkout-single-content mt-50">
                         <h4 class="title-2">Billing Details</h4>
                         <div class="ltn__checkout-single-content-info">
@@ -102,7 +102,7 @@ if (!empty($sessData['status']['msg'])) {
                                     </div>
                                 </div>
                                 <input type="hidden" name="action" value="placeOrder" />
-                                
+
                             </form>
                         </div>
                     </div>
@@ -110,8 +110,8 @@ if (!empty($sessData['status']['msg'])) {
             </div>
             <div class="col-lg-6">
                 <div class="ltn__checkout-payment-method mt-50">
-                    
-                    
+
+
                     <p><?php $sessData ?></p>
                     <button class="btn theme-btn-1 btn-effect-1 text-uppercase" id="btnHehe" type="submit">Place order</button>
                 </div>
@@ -129,13 +129,13 @@ if (!empty($sessData['status']['msg'])) {
                             ?>
                                     <tr>
                                         <td><?php echo $item["name"]; ?> <strong>× <?php echo $item["qty"]; ?></strong></td>
-                                        <td><?php echo number_format( $item["price"]); ?></td>
+                                        <td><?php echo number_format($item["price"]); ?></td>
                                     </tr>
                             <?php }
                             } ?>
                             <tr>
                                 <td><strong>Order Total (VND)</strong></td>
-                                <td><strong><?php echo number_format( $cart->total() ). ' ' . CURRENCY; ?></strong></td>
+                                <td><strong><?php echo number_format($cart->total()) . ' ' . CURRENCY; ?></strong></td>
                             </tr>
                         </tbody>
                     </table>

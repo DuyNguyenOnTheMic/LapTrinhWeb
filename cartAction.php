@@ -77,52 +77,51 @@ if (isset($_REQUEST['action']) && !empty($_REQUEST['action'])) {
         }
 
         if (empty($errorMsg)) {
-                // Insert order info in the database 
-                $sqlQ = "INSERT INTO orders(grand_total, status,first_name, last_name, phone, address, email, created) 
+            // Insert order info in the database 
+            $sqlQ = "INSERT INTO orders(grand_total, status,first_name, last_name, phone, address, email, created) 
                 VALUES (?,?,?,?,?,?,?,NOW())";
-                $stmt = $db->prepare($sqlQ);
-                $stmt->bind_param("sssssss", $db_grand_total, $db_status, $db_first_name, $db_last_name, $db_phone, $db_address, $db_email);
-                $db_grand_total = $cart->total();
-                $db_status = 'Pending';
-                $db_first_name = $first_name;
-                $db_last_name = $last_name;        
-                $db_phone = $phone;
-                $db_address = $address;
-                $db_email = $email;
-                $insertOrder = $stmt->execute();
+            $stmt = $db->prepare($sqlQ);
+            $stmt->bind_param("sssssss", $db_grand_total, $db_status, $db_first_name, $db_last_name, $db_phone, $db_address, $db_email);
+            $db_grand_total = $cart->total();
+            $db_status = 'Pending';
+            $db_first_name = $first_name;
+            $db_last_name = $last_name;
+            $db_phone = $phone;
+            $db_address = $address;
+            $db_email = $email;
+            $insertOrder = $stmt->execute();
 
-                if ($insertOrder) {
-                    $orderID = $stmt->insert_id;
+            if ($insertOrder) {
+                $orderID = $stmt->insert_id;
 
-                    // Retrieve cart items 
-                    $cartItems = $cart->contents();
+                // Retrieve cart items 
+                $cartItems = $cart->contents();
 
-                    // Insert order items in the database 
-                    if (!empty($cartItems)) {
-                        $sqlQ = "INSERT INTO order_items (order_id, product_id, quantity) VALUES (?,?,?)";
-                        $stmt = $db->prepare($sqlQ);
-                        foreach ($cartItems as $item) {
-                            $stmt->bind_param("ids", $db_order_id, $db_product_id, $db_quantity);
-                            $db_order_id = $orderID;
-                            $db_product_id = $item['id'];
-                            $db_quantity = $item['qty'];
-                            $stmt->execute();
-                        }
-
-                        // Remove all items from cart 
-                        $cart->destroy();
-
-                        // Redirect to the status page 
-                        $redirectURL = 'orderSuccess.php?id=' . base64_encode($orderID);
-                    } else {
-                        $sessData['status']['type'] = 'error';
-                        $sessData['status']['msg'] = 'Something went wrong, please try again.';
+                // Insert order items in the database 
+                if (!empty($cartItems)) {
+                    $sqlQ = "INSERT INTO order_items (order_id, product_id, quantity) VALUES (?,?,?)";
+                    $stmt = $db->prepare($sqlQ);
+                    foreach ($cartItems as $item) {
+                        $stmt->bind_param("ids", $db_order_id, $db_product_id, $db_quantity);
+                        $db_order_id = $orderID;
+                        $db_product_id = $item['id'];
+                        $db_quantity = $item['qty'];
+                        $stmt->execute();
                     }
+
+                    // Remove all items from cart 
+                    $cart->destroy();
+
+                    // Redirect to the status page 
+                    $redirectURL = 'orderSuccess.php?id=' . base64_encode($orderID);
                 } else {
                     $sessData['status']['type'] = 'error';
                     $sessData['status']['msg'] = 'Something went wrong, please try again.';
                 }
-           
+            } else {
+                $sessData['status']['type'] = 'error';
+                $sessData['status']['msg'] = 'Something went wrong, please try again.';
+            }
         } else {
             $sessData['status']['type'] = 'error';
             $sessData['status']['msg'] = '<p>Please fill all the mandatory fields.</p>' . $errorMsg;
